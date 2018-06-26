@@ -1,8 +1,8 @@
-#Truepic Android Framework 
-## Version:
+Truepic Android Framework 
 =
 An Android framework that uploads Truepic photos and videos. 
 
+## Version:
 ## Latest Changes: 
 1.
 
