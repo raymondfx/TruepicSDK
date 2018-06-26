@@ -6,6 +6,7 @@ The latest Truepic SDK versions for both iOS and Android.
 
 ### iOS
 [iOS](/IOS)
+## [iOS API Documentation](/iOS/README.md)
 
 ## [Overview]
 
