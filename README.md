@@ -1,18 +1,17 @@
 Truepic SDK
 =
-The latest Truepic SDK versions for both iOS and Android. 
+The latest versions of the Truepic SDK for iOS and Android. 
 
-## Overview
+## [Overview]/(TruepicSDK_Overview.pdf)
 
-## Android
+## [Android](/Android/)
 
-## iOS
+###  [Documentation](/iOS/Truepic_Android_SDK.pdf)
 
-###  [Latest release notes](/iOS/README.md)
+## [iOS](/iOS/)
 
-###  [API Documentation](/iOS/Truepic_iOS_SDK.pdf)
+###  [Documentation](/iOS/Truepic_iOS_SDK.pdf)
 
-###  [API](/iOS/)
 
-## [Overview]
+
 

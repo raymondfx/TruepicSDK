@@ -1,9 +1,9 @@
-Truepic iOS Framework x79
+#Truepic iOS Framework =
 =
+##Version: x79
 An iOS framework that uploads Truepic photos and videos. 
 
-## Changes: Hotfix for app store reject.
-- Deleted URL that was referencing Prefs:Root.
+## Latest changes: Hotfix for app store reject.
+1. Deleted URL that was referencing Prefs:Root.
 
-## [iOS API Documentation](iOS_SDK.md)
-
+## [API Documentation](Truepic_iOS_SDK.pdf)

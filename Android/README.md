@@ -1,9 +1,10 @@
-Truepic iOS Framework x79
+#Truepic Android Framework 
+## Version:
 =
-An iOS framework that uploads Truepic photos and videos. 
+An Android framework that uploads Truepic photos and videos. 
 
-## Changes: Hotfix for app store reject.
-- Deleted URL that was referencing Prefs:Root.
+## Latest Changes: 
+1.
 
-## [iOS API Documentation](iOS_SDK.md)
+## [API Documentation](Truepic_Android_SDK.pdf)
 
