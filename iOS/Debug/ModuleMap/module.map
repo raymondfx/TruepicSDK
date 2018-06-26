@@ -1,0 +1,3 @@
+module CommonCrypto  {
+    header "CommonCrypto/CommonCrypto.h"
+}
