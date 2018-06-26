@@ -1,0 +1,8 @@
+**/*.xcodeproj/project.xcworkspace/xcuserdata
+**/*.xcodeproj/xcuserdata
+**/*.xcworkspace/xcuserdata
+**/*.playground/playground.xcworkspace/xcuserdata
+build
+DerivedData
+Index
+\.DS_Store
