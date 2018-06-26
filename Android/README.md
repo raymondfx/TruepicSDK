@@ -1,6 +1,6 @@
-Truepic Android Framework 
+Truepic SDK Android Library 
 =
-An Android framework that uploads Truepic photos and videos. 
+An Android library that verifies photos and videos with Truepic.
 
 ## Version:
 ## Latest Changes: 

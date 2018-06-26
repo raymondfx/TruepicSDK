@@ -1,6 +1,6 @@
-Truepic iOS Framework
+Truepic SDK iOS Framework
 =
-An iOS framework that uploads Truepic photos and videos. 
+An iOS Framework that verifies photos and videos with Truepic.
 
 ## Version: x79
 ## Latest changes: Hotfix for app store reject.

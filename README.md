@@ -1,4 +1,4 @@
-Truepic SDK
+Truepic Mobile SDK
 =
 The latest versions of the Truepic SDK for iOS and Android. 
 
