@@ -8,9 +8,9 @@ The latest versions of the Truepic SDK for iOS and Android.
 
 ## Android
 
-## [SDK](/Android/)
+1. [SDK](/Android/)
 
-### [Documentation](/iOS/Truepic_Android_SDK.pdf)
+2.  [Documentation](/iOS/Truepic_Android_SDK.pdf)
 
 ## iOS
 
