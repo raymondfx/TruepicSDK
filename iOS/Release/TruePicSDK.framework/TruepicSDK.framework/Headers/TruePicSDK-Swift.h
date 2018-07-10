@@ -164,10 +164,13 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if __has_feature(modules)
 @import AVFoundation;
+@import Foundation;
 @import CoreImage;
 @import CoreLocation;
-@import Foundation;
+@import ObjectiveC;
 @import UIKit;
+@import CoreGraphics;
+@import CoreMedia;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -188,6 +191,21 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+SWIFT_CLASS("_TtC10TruePicSDK13TaskOperation")
+@interface TaskOperation : NSOperation
+@property (nonatomic, readonly, getter=isExecuting) BOOL executing;
+@property (nonatomic, readonly, getter=isFinished) BOOL finished;
+- (void)main;
+- (void)cancel;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC10TruePicSDK19AsyncBlockOperation")
+@interface AsyncBlockOperation : TaskOperation
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+@end
 
 
 
@@ -203,6 +221,27 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+@class CLLocationManager;
+
+SWIFT_CLASS("_TtC10TruePicSDK16LocationServices")
+@interface LocationServices : NSObject <CLLocationManagerDelegate>
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
+- (void)locationManager:(CLLocationManager * _Nonnull)manager didFailWithError:(NSError * _Nonnull)error;
+@end
+
+
+
+
+
+
+
+
+@interface NSLayoutAnchor<AnchorType> (SWIFT_EXTENSION(TruePicSDK))
+- (void)constrainWithEqualTo:(NSLayoutAnchor<AnchorType> * _Nonnull)anchor constant:(CGFloat)const_;
+@end
 
 
 
@@ -213,6 +252,10 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+SWIFT_CLASS("_TtC10TruePicSDK20NotificationDelegate")
+@interface NotificationDelegate : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
 
 
 
@@ -221,15 +264,176 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+SWIFT_CLASS("_TtC10TruePicSDK11TPNetworkOp")
+@interface TPNetworkOp : NSOperation
+@property (nonatomic, readonly, getter=isAsynchronous) BOOL asynchronous;
+@property (nonatomic, readonly, getter=isConcurrent) BOOL concurrent;
+@property (nonatomic, readonly, getter=isExecuting) BOOL executing;
+@property (nonatomic, readonly, getter=isFinished) BOOL finished;
+- (void)start;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC10TruePicSDK15TPGalleryItemOp")
+@interface TPGalleryItemOp : TPNetworkOp
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC10TruePicSDK12TPMetadataOp")
+@interface TPMetadataOp : TPGalleryItemOp
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+- (void)main;
+@end
+
+
+@class AVCapturePhotoOutput;
+@class AVCaptureResolvedPhotoSettings;
+@class AVCapturePhoto;
+@class AVCaptureBracketedStillImageSettings;
+
+SWIFT_CLASS("_TtC10TruePicSDK15TPPhotoDelegate")
+@interface TPPhotoDelegate : NSObject <AVCapturePhotoCaptureDelegate>
+- (void)captureOutput:(AVCapturePhotoOutput * _Nonnull)captureOutput willCapturePhotoForResolvedSettings:(AVCaptureResolvedPhotoSettings * _Nonnull)resolvedSettings;
+- (void)captureOutput:(AVCapturePhotoOutput * _Nonnull)captureOutput didFinishCaptureForResolvedSettings:(AVCaptureResolvedPhotoSettings * _Nonnull)resolvedSettings error:(NSError * _Nullable)error;
+- (void)captureOutput:(AVCapturePhotoOutput * _Nonnull)output didFinishProcessingPhoto:(AVCapturePhoto * _Nonnull)photo error:(NSError * _Nullable)error SWIFT_AVAILABILITY(ios,introduced=11.0);
+- (void)captureOutput:(AVCapturePhotoOutput * _Nonnull)output didFinishProcessingPhotoSampleBuffer:(CMSampleBufferRef _Nullable)photoSampleBuffer previewPhotoSampleBuffer:(CMSampleBufferRef _Nullable)previewPhotoSampleBuffer resolvedSettings:(AVCaptureResolvedPhotoSettings * _Nonnull)resolvedSettings bracketSettings:(AVCaptureBracketedStillImageSettings * _Nullable)bracketSettings error:(NSError * _Nullable)error;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+@end
 
 
 
 
-@class NSBundle;
+SWIFT_CLASS("_TtC10TruePicSDK14TPSentryLogger")
+@interface TPSentryLogger : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC10TruePicSDK20TPUploadTaskDelegate")
+@interface TPUploadTaskDelegate : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+@end
+
+@class NSURLSession;
+@class NSURLSessionDataTask;
+
+@interface TPUploadTaskDelegate (SWIFT_EXTENSION(TruePicSDK)) <NSURLSessionDataDelegate>
+- (void)URLSession:(NSURLSession * _Nonnull)session dataTask:(NSURLSessionDataTask * _Nonnull)dataTask didReceiveData:(NSData * _Nonnull)data;
+@end
+
+
+@interface TPUploadTaskDelegate (SWIFT_EXTENSION(TruePicSDK)) <NSURLSessionDelegate>
+- (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession * _Nonnull)session;
+@end
+
+@class NSURLSessionTask;
+
+@interface TPUploadTaskDelegate (SWIFT_EXTENSION(TruePicSDK)) <NSURLSessionTaskDelegate>
+- (void)URLSession:(NSURLSession * _Nonnull)session task:(NSURLSessionTask * _Nonnull)task didCompleteWithError:(NSError * _Nullable)error;
+- (void)URLSession:(NSURLSession * _Nonnull)_ task:(NSURLSessionTask * _Nonnull)task didSendBodyData:(int64_t)bytesSent totalBytesSent:(int64_t)totalBytesSent totalBytesExpectedToSend:(int64_t)totalBytesExpectedToSend;
+@end
+
+@class AVCaptureFileOutput;
+@class AVCaptureConnection;
+
+SWIFT_CLASS("_TtC10TruePicSDK15TPVideoDelegate")
+@interface TPVideoDelegate : NSObject <AVCaptureFileOutputRecordingDelegate>
+- (void)captureOutput:(AVCaptureFileOutput * _Nonnull)output didFinishRecordingToOutputFileAtURL:(NSURL * _Nonnull)outputFileURL fromConnections:(NSArray<AVCaptureConnection *> * _Nonnull)connections error:(NSError * _Nullable)error;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+@end
+
 @class NSCoder;
+
+SWIFT_CLASS("_TtC10TruePicSDK19TapToFocusAnimation")
+@interface TapToFocusAnimation : UIView
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+@class UILabel;
+@class UIButton;
+@class UIImageView;
+@class UITextView;
+@class NSLayoutConstraint;
+
+SWIFT_CLASS("_TtC10TruePicSDK11TruePicView")
+@interface TruePicView : UIView <UIGestureRecognizerDelegate, UITextViewDelegate>
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified statusAlertsDrawer;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified timerView;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified timerLabel;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified statusView;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified statusTapArea;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified closeViewButton;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified statusIndicator;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified statusText;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified statusArrow;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified flashButton;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified alertView;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified alertIcon;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified alertTitle;
+@property (nonatomic, weak) IBOutlet UITextView * _Null_unspecified alertBody;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified closeButton;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified alignmentCrosshatch;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified thumbnails;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified photoButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified videoButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified mediaTypeButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified toggleFrontBackCamera;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified noTapToFocusArea;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified statusViewTop;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified thumbnailsLeading;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified mediaTypeTrailing;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified changeCameraTrailing;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UITapGestureRecognizer;
+
+@interface TruePicView (SWIFT_EXTENSION(TruePicSDK))
+- (IBAction)focusOnTap:(UITapGestureRecognizer * _Nonnull)gestureRecognizer;
+@end
+
+
+@interface TruePicView (SWIFT_EXTENSION(TruePicSDK))
+- (IBAction)mediaType:(UIButton * _Nonnull)button;
+@end
+
+
+
+
+@interface TruePicView (SWIFT_EXTENSION(TruePicSDK))
+- (IBAction)ignoreTaps:(UITapGestureRecognizer * _Nonnull)gestureRecognizer;
+@end
+
+
+
+
+
+@class UIPinchGestureRecognizer;
+
+@interface TruePicView (SWIFT_EXTENSION(TruePicSDK))
+- (void)awakeFromNib;
+- (IBAction)closeView;
+- (IBAction)pinchToZoom:(UIPinchGestureRecognizer * _Nonnull)gestureRecognizer;
+- (BOOL)textView:(UITextView * _Nonnull)textView shouldInteractWithURL:(NSURL * _Nonnull)URL inRange:(NSRange)characterRange interaction:(UITextItemInteraction)interaction SWIFT_WARN_UNUSED_RESULT;
+@end
+
+@class VideoPreview;
+@class NSBundle;
 
 SWIFT_CLASS("_TtC10TruePicSDK21TruePicViewController")
 @interface TruePicViewController : UIViewController
+@property (nonatomic, weak) IBOutlet VideoPreview * _Null_unspecified videoPreview;
+@property (nonatomic, weak) IBOutlet TruePicView * _Null_unspecified truePicView;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -246,13 +450,26 @@ SWIFT_CLASS("_TtC10TruePicSDK21TruePicViewController")
 
 
 
+@class NSNotification;
 
 @interface TruePicViewController (SWIFT_EXTENSION(TruePicSDK))
 - (void)viewDidLoad;
+- (IBAction)errorAlertMessageWithNotification:(NSNotification * _Nonnull)notification;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
 @property (nonatomic, readonly) BOOL shouldAutorotate;
 @property (nonatomic, readonly) BOOL prefersStatusBarHidden;
+@end
+
+
+SWIFT_CLASS("_TtC10TruePicSDK25TruePicViewControllerView")
+@interface TruePicViewControllerView : UIView
+@property (nonatomic, weak) IBOutlet VideoPreview * _Null_unspecified videoPreview;
+@property (nonatomic, weak) IBOutlet TruePicView * _Null_unspecified truepicView;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified videoPreviewTop;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified videoPreviewBottom;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -264,6 +481,20 @@ SWIFT_CLASS("_TtC10TruePicSDK21TruePicViewController")
 
 
 
+
+
+
+
+
+
+SWIFT_CLASS("_TtC10TruePicSDK12VideoPreview")
+@interface VideoPreview : UIView
+- (void)awakeFromNib;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layerClass;)
++ (Class _Nonnull)layerClass SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
 
 
 
