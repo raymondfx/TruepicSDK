@@ -4,25 +4,26 @@ An iOS Framework that verifies photos and videos with Truepic.
 
 ## [API Documentation](Truepic_iOS_SDK.pdf)
 
-## Changes for build: 81
+## Changes for build: 82
 
-### Feature changes
-1. Changed how video capture works, needs extra testing before released.
-- No longer retries if upload rejected by server as too large.
--  Videos now limited to 30 seconds and 100 megabytes.
--  Videos that are stopped by backgrounding the app or switching views are no saved, and no longer display an error alert.
-- Cleaned up video error handling so it will work in localized versions of iOS, minimizing situations where we show error alerts, and made code much easier to maintain and update.
-2. Implemented continuous autofocus, should focus photos better.
-3. Sentry Logging Updates
-- Normalized event message text so errors can be grouped correctly by Sentry.
-- Now log stack trace and current thread for each event.
-- Log retry errors when they take multiples of four attempts
-4. Implemented Crashalytics for TestPic builds.
-5. Metadata verification now fails if request doesn’t start within 15 seconds (instead of 5 minutes). 
-6. Flash Updates
-- Auto-flash setting now works again, flash settings now traversed by tapping flash icon button (didn’t have time to restore menu). 
-- No longer crashes if flash activated with front facing camera. Front camera now only displays flash button if device allows front flash.
-- All photo capture crashes (objective c run time exceptions) should now be caught, and displayed to user as error alerts (and logged)  
-- No longer use beta iOS 10 API to get device flash modes. 
-- No longer use deprecated flash settings API that crashed in iOS 12.
+###  Upload changes
+1. Now limit concurrent uploads to two at once, which seems optimal for both wifi and cellular.
+2. Start all uploads 2 minutes 30 seconds after app goes to background, j 30 seconds before app's execution time expires.
+3. Uploads that fail validation because of app crash/quit now copied to camera roll.
+4. Incorporated/updated Mosalam’s lens distance code so it won’t overwrite client data.
+
+###  Capture changes
+1. Photo capture faster and more natural. Both Photo and video capture now process on background thread, which also allows up to four photos to be taken/processed at a time.
+2. Fixed minor memory leak (1.6kb) in jailbreak detection code that runs once at launch, caused by directly using objective C runtime call without deallocating returned buffer.
+3. Deferred tiny leak (48 bytes) in location permissions code that runs each time camera was open.
+
+### Crashes
+1. Fixed crash when returning to foreground if app was already in foreground.
+2. Fixed all crashes from video capture.
+2. Now should catch almost all Objective C exceptions instead of letting them crash app. Wrapped video capture and key entry and  view methods with ObjectiveC exception handlers that display error alerts and log to sentry.
+
+### Video flash fixes
+- Front video flash icon now hidden since flash is not supported for front video, only front photos.
+- Back video flash options now work after switching from front camera.
+
 

@@ -233,6 +233,13 @@ SWIFT_CLASS("_TtC10TruePicSDK16LocationServices")
 @end
 
 
+SWIFT_CLASS("_TtC10TruePicSDK25MainThreadBlockingMonitor")
+@interface MainThreadBlockingMonitor : NSThread
+- (void)main;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=2.0);
+@end
+
+
 
 
 
@@ -262,6 +269,22 @@ SWIFT_CLASS("_TtC10TruePicSDK20NotificationDelegate")
 
 
 
+
+
+SWIFT_CLASS("_TtC10TruePicSDK17TPCaptureDelegate")
+@interface TPCaptureDelegate : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+@end
+
+@class UITouch;
+@class UIEvent;
+
+SWIFT_CLASS("_TtC10TruePicSDK22TPCaptureTapRecognizer")
+@interface TPCaptureTapRecognizer : UITapGestureRecognizer
+- (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nonnull)event;
+- (nonnull instancetype)initWithTarget:(id _Nullable)target action:(SEL _Nullable)action OBJC_DESIGNATED_INITIALIZER;
+@end
 
 
 SWIFT_CLASS("_TtC10TruePicSDK11TPNetworkOp")
@@ -295,13 +318,11 @@ SWIFT_CLASS("_TtC10TruePicSDK12TPMetadataOp")
 @class AVCaptureBracketedStillImageSettings;
 
 SWIFT_CLASS("_TtC10TruePicSDK15TPPhotoDelegate")
-@interface TPPhotoDelegate : NSObject <AVCapturePhotoCaptureDelegate>
+@interface TPPhotoDelegate : TPCaptureDelegate <AVCapturePhotoCaptureDelegate>
 - (void)captureOutput:(AVCapturePhotoOutput * _Nonnull)captureOutput willCapturePhotoForResolvedSettings:(AVCaptureResolvedPhotoSettings * _Nonnull)resolvedSettings;
 - (void)captureOutput:(AVCapturePhotoOutput * _Nonnull)captureOutput didFinishCaptureForResolvedSettings:(AVCaptureResolvedPhotoSettings * _Nonnull)resolvedSettings error:(NSError * _Nullable)error;
 - (void)captureOutput:(AVCapturePhotoOutput * _Nonnull)output didFinishProcessingPhoto:(AVCapturePhoto * _Nonnull)photo error:(NSError * _Nullable)error SWIFT_AVAILABILITY(ios,introduced=11.0);
 - (void)captureOutput:(AVCapturePhotoOutput * _Nonnull)output didFinishProcessingPhotoSampleBuffer:(CMSampleBufferRef _Nullable)photoSampleBuffer previewPhotoSampleBuffer:(CMSampleBufferRef _Nullable)previewPhotoSampleBuffer resolvedSettings:(AVCaptureResolvedPhotoSettings * _Nonnull)resolvedSettings bracketSettings:(AVCaptureBracketedStillImageSettings * _Nullable)bracketSettings error:(NSError * _Nullable)error;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
 
 
@@ -320,15 +341,15 @@ SWIFT_CLASS("_TtC10TruePicSDK20TPUploadTaskDelegate")
 @end
 
 @class NSURLSession;
-
-@interface TPUploadTaskDelegate (SWIFT_EXTENSION(TruePicSDK)) <NSURLSessionDelegate>
-- (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession * _Nonnull)session;
-@end
-
 @class NSURLSessionDataTask;
 
 @interface TPUploadTaskDelegate (SWIFT_EXTENSION(TruePicSDK)) <NSURLSessionDataDelegate>
 - (void)URLSession:(NSURLSession * _Nonnull)session dataTask:(NSURLSessionDataTask * _Nonnull)dataTask didReceiveData:(NSData * _Nonnull)data;
+@end
+
+
+@interface TPUploadTaskDelegate (SWIFT_EXTENSION(TruePicSDK)) <NSURLSessionDelegate>
+- (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession * _Nonnull)session;
 @end
 
 @class NSURLSessionTask;
@@ -342,10 +363,8 @@ SWIFT_CLASS("_TtC10TruePicSDK20TPUploadTaskDelegate")
 @class AVCaptureConnection;
 
 SWIFT_CLASS("_TtC10TruePicSDK15TPVideoDelegate")
-@interface TPVideoDelegate : NSObject <AVCaptureFileOutputRecordingDelegate>
+@interface TPVideoDelegate : TPCaptureDelegate <AVCaptureFileOutputRecordingDelegate>
 - (void)captureOutput:(AVCaptureFileOutput * _Nonnull)output didFinishRecordingToOutputFileAtURL:(NSURL * _Nonnull)outputFileURL fromConnections:(NSArray<AVCaptureConnection *> * _Nonnull)connections error:(NSError * _Nullable)error;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
 
 @class NSCoder;
@@ -398,7 +417,6 @@ SWIFT_CLASS("_TtC10TruePicSDK11TruePicView")
 
 
 
-@class UITapGestureRecognizer;
 
 @interface TruePicView (SWIFT_EXTENSION(TruePicSDK))
 - (IBAction)focusOnTap:(UITapGestureRecognizer * _Nonnull)gestureRecognizer;
@@ -410,11 +428,11 @@ SWIFT_CLASS("_TtC10TruePicSDK11TruePicView")
 @end
 
 
-
-
 @interface TruePicView (SWIFT_EXTENSION(TruePicSDK))
 - (IBAction)ignoreTaps:(UITapGestureRecognizer * _Nonnull)gestureRecognizer;
 @end
+
+
 
 
 
