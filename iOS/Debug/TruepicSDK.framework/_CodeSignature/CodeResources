@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		E0FFrb258a2NTprKbhLSr9OzJwI=
+		3WF7TH7zSHZ29TxQFgSOtEVVJ/s=
 		</data>
 		<key>Headers/TruePic.h</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		PfOqPUBHTcxyUHnBMQDB2dpqHcE=
+		XA33hfeuMZaWE34a8EJT7LHRJbY=
 		</data>
 		<key>Localizable.strings</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/TruePicSDK.swiftmodule/arm.swiftmodule</key>
 		<data>
-		2YxMlsF6dDHqBYYvIPe5DLzeeaQ=
+		Cp6X9a99o1zoXEnewTYDFYcA+GY=
 		</data>
 		<key>Modules/TruePicSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/TruePicSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		N4vUEPXjYEQqSoJGXcUFxBu8muQ=
+		imeHQq9/t9d3qDdMrmAyHBSEoKw=
 		</data>
 		<key>Modules/TruePicSDK.swiftmodule/i386.swiftdoc</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Modules/TruePicSDK.swiftmodule/i386.swiftmodule</key>
 		<data>
-		4XxZLfQ+waAJdAlPBpA3CJljV5o=
+		cvaYg2Ni0RtI6dXy0L1+O5Wdg0Q=
 		</data>
 		<key>Modules/TruePicSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/TruePicSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		4Egx51wPxCCDfiQU5OtQLrqvF40=
+		0nbjv9KovMqg2jrDLy8DS1kGQpE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>TruePic.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib</key>
 		<data>
-		86pKx5ZVuizYLMBpFhKB1yp42Qk=
+		B9e2zZaw1jORPYa03j6PjHJDfpU=
 		</data>
 		<key>TruePic.storyboardc/Info.plist</key>
 		<data>
@@ -86,7 +86,7 @@
 		</data>
 		<key>TruePic.storyboardc/TruePicViewController.nib</key>
 		<data>
-		F8bQ0jjOZOInQTa7suRL+UfaFb8=
+		G5l2UJMrTFurkConABn7dXo5PA0=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -95,11 +95,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			E0FFrb258a2NTprKbhLSr9OzJwI=
+			3WF7TH7zSHZ29TxQFgSOtEVVJ/s=
 			</data>
 			<key>hash2</key>
 			<data>
-			CqCWKREcCi050UAG2pI2uUB6VWjYfV2QsOiml89RjBw=
+			xFteCBhKT7+VcPW6S1O+xbjo3Wj6vqAxONOfEQzan70=
 			</data>
 		</dict>
 		<key>Headers/TruePic.h</key>
@@ -150,11 +150,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2YxMlsF6dDHqBYYvIPe5DLzeeaQ=
+			Cp6X9a99o1zoXEnewTYDFYcA+GY=
 			</data>
 			<key>hash2</key>
 			<data>
-			f+8K5cjLVdGWp5XpN2MXiQogNklimwo6uEiCQXGZ4zw=
+			E3a+BGgd2qyUnOgC/sa3vlqDZDztf5GlEZiypcDZfP8=
 			</data>
 		</dict>
 		<key>Modules/TruePicSDK.swiftmodule/arm64.swiftdoc</key>
@@ -172,11 +172,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			N4vUEPXjYEQqSoJGXcUFxBu8muQ=
+			imeHQq9/t9d3qDdMrmAyHBSEoKw=
 			</data>
 			<key>hash2</key>
 			<data>
-			eKXd8cAgkFhnUOiXhpNDR85AB89dHaeO6ugVHzvcECg=
+			2kDUSLNAPLKOEyA5W+7hGDMJoOkTp7yK0J4L6V5W4r0=
 			</data>
 		</dict>
 		<key>Modules/TruePicSDK.swiftmodule/i386.swiftdoc</key>
@@ -194,11 +194,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			4XxZLfQ+waAJdAlPBpA3CJljV5o=
+			cvaYg2Ni0RtI6dXy0L1+O5Wdg0Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			NXSaOF0cl+bNMHUva8lPAtqEdaq0m4GBqTtQ4Sa4SiM=
+			HXjY7YCGEwZaTpQelkHKGBkhQCMiBq/Wub+5o5QRyuA=
 			</data>
 		</dict>
 		<key>Modules/TruePicSDK.swiftmodule/x86_64.swiftdoc</key>
@@ -216,11 +216,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			4Egx51wPxCCDfiQU5OtQLrqvF40=
+			0nbjv9KovMqg2jrDLy8DS1kGQpE=
 			</data>
 			<key>hash2</key>
 			<data>
-			Hcsf8+/7p+kMr34Yi6hyPTsOs3rRP9n004uGC1GFnxE=
+			IC0OV7jDb6+tG61dpJpN3eWfvZv98ccvCtQPrWf8NeE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -282,11 +282,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			86pKx5ZVuizYLMBpFhKB1yp42Qk=
+			B9e2zZaw1jORPYa03j6PjHJDfpU=
 			</data>
 			<key>hash2</key>
 			<data>
-			1Mx4gAo9w0Vp6yFIzxBcLVypszSgQTD0MDFFxQE4IuE=
+			7z4oCAPD4VcrztFwJoAO2Y+io5mEMVA12jvVFdPXdsk=
 			</data>
 		</dict>
 		<key>TruePic.storyboardc/Info.plist</key>
@@ -304,11 +304,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			F8bQ0jjOZOInQTa7suRL+UfaFb8=
+			G5l2UJMrTFurkConABn7dXo5PA0=
 			</data>
 			<key>hash2</key>
 			<data>
-			CtS2a+AXPLb/0gg4Evx1FLYFsDY98jHZdRIAd5tCvUk=
+			VfZcenRq//G0V6iSEKObj9KVGbKSRVWlZUyQLq4KwZY=
 			</data>
 		</dict>
 	</dict>
