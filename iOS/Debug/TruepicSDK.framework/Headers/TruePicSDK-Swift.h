@@ -259,12 +259,6 @@ SWIFT_CLASS("_TtC10TruePicSDK25MainThreadBlockingMonitor")
 
 
 
-SWIFT_CLASS("_TtC10TruePicSDK20NotificationDelegate")
-@interface NotificationDelegate : NSObject
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
 
 
 
@@ -341,15 +335,15 @@ SWIFT_CLASS("_TtC10TruePicSDK20TPUploadTaskDelegate")
 @end
 
 @class NSURLSession;
+
+@interface TPUploadTaskDelegate (SWIFT_EXTENSION(TruePicSDK)) <NSURLSessionDelegate>
+- (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession * _Nonnull)session;
+@end
+
 @class NSURLSessionDataTask;
 
 @interface TPUploadTaskDelegate (SWIFT_EXTENSION(TruePicSDK)) <NSURLSessionDataDelegate>
 - (void)URLSession:(NSURLSession * _Nonnull)session dataTask:(NSURLSessionDataTask * _Nonnull)dataTask didReceiveData:(NSData * _Nonnull)data;
-@end
-
-
-@interface TPUploadTaskDelegate (SWIFT_EXTENSION(TruePicSDK)) <NSURLSessionDelegate>
-- (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession * _Nonnull)session;
 @end
 
 @class NSURLSessionTask;
@@ -402,7 +396,7 @@ SWIFT_CLASS("_TtC10TruePicSDK11TruePicView")
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified closeButton;
 @property (nonatomic, weak) IBOutlet UIView * _Null_unspecified alignmentCrosshatch;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified thumbnails;
-@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified photoButton;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified photoCapture;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified videoButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified mediaTypeButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified toggleFrontBackCamera;
@@ -428,11 +422,11 @@ SWIFT_CLASS("_TtC10TruePicSDK11TruePicView")
 @end
 
 
+
+
 @interface TruePicView (SWIFT_EXTENSION(TruePicSDK))
 - (IBAction)ignoreTaps:(UITapGestureRecognizer * _Nonnull)gestureRecognizer;
 @end
-
-
 
 
 
