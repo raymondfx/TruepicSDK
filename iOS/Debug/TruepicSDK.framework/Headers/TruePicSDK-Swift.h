@@ -164,9 +164,9 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if __has_feature(modules)
 @import AVFoundation;
-@import Foundation;
 @import CoreImage;
 @import CoreLocation;
+@import Foundation;
 @import ObjectiveC;
 @import UIKit;
 @import CoreGraphics;
@@ -189,23 +189,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
-
-
-SWIFT_CLASS("_TtC10TruePicSDK13TaskOperation")
-@interface TaskOperation : NSOperation
-@property (nonatomic, readonly, getter=isExecuting) BOOL executing;
-@property (nonatomic, readonly, getter=isFinished) BOOL finished;
-- (void)main;
-- (void)cancel;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-SWIFT_CLASS("_TtC10TruePicSDK19AsyncBlockOperation")
-@interface AsyncBlockOperation : TaskOperation
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
-@end
 
 
 
@@ -265,6 +248,23 @@ SWIFT_CLASS("_TtC10TruePicSDK25MainThreadBlockingMonitor")
 
 
 
+SWIFT_CLASS("_TtC10TruePicSDK11TPOperation")
+@interface TPOperation : NSOperation
+@property (nonatomic, readonly, getter=isExecuting) BOOL executing;
+@property (nonatomic, readonly, getter=isFinished) BOOL finished;
+- (void)main;
+- (void)cancel;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC10TruePicSDK12TPAsyncBlock")
+@interface TPAsyncBlock : TPOperation
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+@end
+
+
 SWIFT_CLASS("_TtC10TruePicSDK17TPCaptureDelegate")
 @interface TPCaptureDelegate : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -304,6 +304,7 @@ SWIFT_CLASS("_TtC10TruePicSDK12TPMetadataOp")
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
 - (void)main;
 @end
+
 
 
 @class AVCapturePhotoOutput;
@@ -369,7 +370,6 @@ SWIFT_CLASS("_TtC10TruePicSDK19TapToFocusAnimation")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
-
 
 @class UILabel;
 @class UIButton;
