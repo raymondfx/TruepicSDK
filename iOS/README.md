@@ -13,4 +13,4 @@ An iOS Framework that verifies photos and videos with Truepic.
 - Allow jaibreak..
 
 
-
+NOTE: Video uploads don't work in this release, but shouldn't matter cause video is disabled by server config.
