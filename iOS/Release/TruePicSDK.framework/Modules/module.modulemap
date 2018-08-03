@@ -1,4 +1,4 @@
-framework module TruepicSDK {
-    header "TruepicSDK-Swift.h"
+framework module TruePicSDK {
+    header "TruePicSDK-Swift.h"
     requires objc
 }
