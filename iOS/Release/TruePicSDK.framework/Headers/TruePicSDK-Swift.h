@@ -184,7 +184,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_attribute(external_source_symbol)
 # pragma push_macro("any")
 # undef any
-# pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="TruePicSDK",generated_declaration))), apply_to=any(function,enum,objc_interface,objc_category,objc_protocol))
+# pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="TruepicSDK",generated_declaration))), apply_to=any(function,enum,objc_interface,objc_category,objc_protocol))
 # pragma pop_macro("any")
 #endif
 
@@ -206,7 +206,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 @class CLLocationManager;
 
-SWIFT_CLASS("_TtC10TruePicSDK16LocationServices")
+SWIFT_CLASS("_TtC10TruepicSDK16LocationServices")
 @interface LocationServices : NSObject <CLLocationManagerDelegate>
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
@@ -222,7 +222,7 @@ SWIFT_CLASS("_TtC10TruePicSDK16LocationServices")
 
 
 
-@interface NSLayoutAnchor<AnchorType> (SWIFT_EXTENSION(TruePicSDK))
+@interface NSLayoutAnchor<AnchorType> (SWIFT_EXTENSION(TruepicSDK))
 - (void)constrainWithEqualTo:(NSLayoutAnchor<AnchorType> * _Nonnull)anchor constant:(CGFloat)const_;
 @end
 
@@ -241,7 +241,7 @@ SWIFT_CLASS("_TtC10TruePicSDK16LocationServices")
 
 
 
-SWIFT_CLASS("_TtC10TruePicSDK11TPOperation")
+SWIFT_CLASS("_TtC10TruepicSDK11TPOperation")
 @interface TPOperation : NSOperation
 @property (nonatomic, readonly, getter=isExecuting) BOOL executing;
 @property (nonatomic, readonly, getter=isFinished) BOOL finished;
@@ -251,14 +251,14 @@ SWIFT_CLASS("_TtC10TruePicSDK11TPOperation")
 @end
 
 
-SWIFT_CLASS("_TtC10TruePicSDK12TPAsyncBlock")
+SWIFT_CLASS("_TtC10TruepicSDK12TPAsyncBlock")
 @interface TPAsyncBlock : TPOperation
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
 
 
-SWIFT_CLASS("_TtC10TruePicSDK17TPCaptureDelegate")
+SWIFT_CLASS("_TtC10TruepicSDK17TPCaptureDelegate")
 @interface TPCaptureDelegate : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
@@ -267,14 +267,14 @@ SWIFT_CLASS("_TtC10TruePicSDK17TPCaptureDelegate")
 @class UITouch;
 @class UIEvent;
 
-SWIFT_CLASS("_TtC10TruePicSDK22TPCaptureTapRecognizer")
+SWIFT_CLASS("_TtC10TruepicSDK22TPCaptureTapRecognizer")
 @interface TPCaptureTapRecognizer : UITapGestureRecognizer
 - (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nonnull)event;
 - (nonnull instancetype)initWithTarget:(id _Nullable)target action:(SEL _Nullable)action OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
-SWIFT_CLASS("_TtC10TruePicSDK11TPNetworkOp")
+SWIFT_CLASS("_TtC10TruepicSDK11TPNetworkOp")
 @interface TPNetworkOp : NSOperation
 @property (nonatomic, readonly, getter=isAsynchronous) BOOL asynchronous;
 @property (nonatomic, readonly, getter=isConcurrent) BOOL concurrent;
@@ -285,14 +285,14 @@ SWIFT_CLASS("_TtC10TruePicSDK11TPNetworkOp")
 @end
 
 
-SWIFT_CLASS("_TtC10TruePicSDK15TPGalleryItemOp")
+SWIFT_CLASS("_TtC10TruepicSDK15TPGalleryItemOp")
 @interface TPGalleryItemOp : TPNetworkOp
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
 
 
-SWIFT_CLASS("_TtC10TruePicSDK12TPMetadataOp")
+SWIFT_CLASS("_TtC10TruepicSDK12TPMetadataOp")
 @interface TPMetadataOp : TPGalleryItemOp
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
 - (void)main;
@@ -305,7 +305,7 @@ SWIFT_CLASS("_TtC10TruePicSDK12TPMetadataOp")
 @class AVCapturePhoto;
 @class AVCaptureBracketedStillImageSettings;
 
-SWIFT_CLASS("_TtC10TruePicSDK15TPPhotoDelegate")
+SWIFT_CLASS("_TtC10TruepicSDK15TPPhotoDelegate")
 @interface TPPhotoDelegate : TPCaptureDelegate <AVCapturePhotoCaptureDelegate>
 - (void)captureOutput:(AVCapturePhotoOutput * _Nonnull)captureOutput willCapturePhotoForResolvedSettings:(AVCaptureResolvedPhotoSettings * _Nonnull)resolvedSettings;
 - (void)captureOutput:(AVCapturePhotoOutput * _Nonnull)captureOutput didFinishCaptureForResolvedSettings:(AVCaptureResolvedPhotoSettings * _Nonnull)resolvedSettings error:(NSError * _Nullable)error;
@@ -316,13 +316,13 @@ SWIFT_CLASS("_TtC10TruePicSDK15TPPhotoDelegate")
 
 
 
-SWIFT_CLASS("_TtC10TruePicSDK14TPSentryLogger")
+SWIFT_CLASS("_TtC10TruepicSDK14TPSentryLogger")
 @interface TPSentryLogger : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
-SWIFT_CLASS("_TtC10TruePicSDK20TPUploadTaskDelegate")
+SWIFT_CLASS("_TtC10TruepicSDK20TPUploadTaskDelegate")
 @interface TPUploadTaskDelegate : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
@@ -331,18 +331,18 @@ SWIFT_CLASS("_TtC10TruePicSDK20TPUploadTaskDelegate")
 @class NSURLSession;
 @class NSURLSessionDataTask;
 
-@interface TPUploadTaskDelegate (SWIFT_EXTENSION(TruePicSDK)) <NSURLSessionDataDelegate>
+@interface TPUploadTaskDelegate (SWIFT_EXTENSION(TruepicSDK)) <NSURLSessionDataDelegate>
 - (void)URLSession:(NSURLSession * _Nonnull)session dataTask:(NSURLSessionDataTask * _Nonnull)dataTask didReceiveData:(NSData * _Nonnull)data;
 @end
 
 
-@interface TPUploadTaskDelegate (SWIFT_EXTENSION(TruePicSDK)) <NSURLSessionDelegate>
+@interface TPUploadTaskDelegate (SWIFT_EXTENSION(TruepicSDK)) <NSURLSessionDelegate>
 - (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession * _Nonnull)session;
 @end
 
 @class NSURLSessionTask;
 
-@interface TPUploadTaskDelegate (SWIFT_EXTENSION(TruePicSDK)) <NSURLSessionTaskDelegate>
+@interface TPUploadTaskDelegate (SWIFT_EXTENSION(TruepicSDK)) <NSURLSessionTaskDelegate>
 - (void)URLSession:(NSURLSession * _Nonnull)session task:(NSURLSessionTask * _Nonnull)task didCompleteWithError:(NSError * _Nullable)error;
 - (void)URLSession:(NSURLSession * _Nonnull)_ task:(NSURLSessionTask * _Nonnull)task didSendBodyData:(int64_t)bytesSent totalBytesSent:(int64_t)totalBytesSent totalBytesExpectedToSend:(int64_t)totalBytesExpectedToSend;
 @end
@@ -350,14 +350,14 @@ SWIFT_CLASS("_TtC10TruePicSDK20TPUploadTaskDelegate")
 @class AVCaptureFileOutput;
 @class AVCaptureConnection;
 
-SWIFT_CLASS("_TtC10TruePicSDK15TPVideoDelegate")
+SWIFT_CLASS("_TtC10TruepicSDK15TPVideoDelegate")
 @interface TPVideoDelegate : TPCaptureDelegate <AVCaptureFileOutputRecordingDelegate>
 - (void)captureOutput:(AVCaptureFileOutput * _Nonnull)output didFinishRecordingToOutputFileAtURL:(NSURL * _Nonnull)outputFileURL fromConnections:(NSArray<AVCaptureConnection *> * _Nonnull)connections error:(NSError * _Nullable)error;
 @end
 
 @class NSCoder;
 
-SWIFT_CLASS("_TtC10TruePicSDK19TapToFocusAnimation")
+SWIFT_CLASS("_TtC10TruepicSDK19TapToFocusAnimation")
 @interface TapToFocusAnimation : UIView
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -370,7 +370,7 @@ SWIFT_CLASS("_TtC10TruePicSDK19TapToFocusAnimation")
 @class UITextView;
 @class NSLayoutConstraint;
 
-SWIFT_CLASS("_TtC10TruePicSDK11TruePicView")
+SWIFT_CLASS("_TtC10TruepicSDK11TruePicView")
 @interface TruePicView : UIView <UIGestureRecognizerDelegate, UITextViewDelegate>
 @property (nonatomic, weak) IBOutlet UIView * _Null_unspecified statusAlertsDrawer;
 @property (nonatomic, weak) IBOutlet UIView * _Null_unspecified timerView;
@@ -403,39 +403,39 @@ SWIFT_CLASS("_TtC10TruePicSDK11TruePicView")
 @end
 
 
-@interface TruePicView (SWIFT_EXTENSION(TruePicSDK))
+@interface TruePicView (SWIFT_EXTENSION(TruepicSDK))
+- (IBAction)mediaType:(UIButton * _Nonnull)button;
+@end
+
+
+@interface TruePicView (SWIFT_EXTENSION(TruepicSDK))
 - (IBAction)focusOnTap:(UITapGestureRecognizer * _Nonnull)gestureRecognizer;
 @end
 
 
 
 
-@interface TruePicView (SWIFT_EXTENSION(TruePicSDK))
-- (IBAction)mediaType:(UIButton * _Nonnull)button;
-@end
 
 
-
-
-@interface TruePicView (SWIFT_EXTENSION(TruePicSDK))
+@interface TruePicView (SWIFT_EXTENSION(TruepicSDK))
 - (IBAction)ignoreTaps:(UITapGestureRecognizer * _Nonnull)gestureRecognizer;
 @end
 
-
-
 @class UIPinchGestureRecognizer;
 
-@interface TruePicView (SWIFT_EXTENSION(TruePicSDK))
+@interface TruePicView (SWIFT_EXTENSION(TruepicSDK))
 - (void)awakeFromNib;
 - (IBAction)closeView;
 - (IBAction)pinchToZoom:(UIPinchGestureRecognizer * _Nonnull)gestureRecognizer;
 - (BOOL)textView:(UITextView * _Nonnull)textView shouldInteractWithURL:(NSURL * _Nonnull)URL inRange:(NSRange)characterRange interaction:(UITextItemInteraction)interaction SWIFT_WARN_UNUSED_RESULT;
 @end
 
+
+
 @class VideoPreview;
 @class NSBundle;
 
-SWIFT_CLASS("_TtC10TruePicSDK21TruePicViewController")
+SWIFT_CLASS("_TtC10TruepicSDK21TruePicViewController")
 @interface TruePicViewController : UIViewController
 @property (nonatomic, weak) IBOutlet VideoPreview * _Null_unspecified videoPreview;
 @property (nonatomic, weak) IBOutlet TruePicView * _Null_unspecified truePicView;
@@ -457,7 +457,7 @@ SWIFT_CLASS("_TtC10TruePicSDK21TruePicViewController")
 
 @class NSNotification;
 
-@interface TruePicViewController (SWIFT_EXTENSION(TruePicSDK))
+@interface TruePicViewController (SWIFT_EXTENSION(TruepicSDK))
 - (void)viewDidLoad;
 - (IBAction)errorAlertMessageWithNotification:(NSNotification * _Nonnull)notification;
 - (void)viewWillAppear:(BOOL)animated;
@@ -467,7 +467,7 @@ SWIFT_CLASS("_TtC10TruePicSDK21TruePicViewController")
 @end
 
 
-SWIFT_CLASS("_TtC10TruePicSDK25TruePicViewControllerView")
+SWIFT_CLASS("_TtC10TruepicSDK25TruePicViewControllerView")
 @interface TruePicViewControllerView : UIView
 @property (nonatomic, weak) IBOutlet VideoPreview * _Null_unspecified videoPreview;
 @property (nonatomic, weak) IBOutlet TruePicView * _Null_unspecified truepicView;
@@ -492,7 +492,7 @@ SWIFT_CLASS("_TtC10TruePicSDK25TruePicViewControllerView")
 
 
 
-SWIFT_CLASS("_TtC10TruePicSDK12VideoPreview")
+SWIFT_CLASS("_TtC10TruepicSDK12VideoPreview")
 @interface VideoPreview : UIView
 - (void)awakeFromNib;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layerClass;)
