@@ -258,9 +258,11 @@ SWIFT_CLASS("_TtC10TruePicSDK12TPAsyncBlock")
 @end
 
 @class UILabel;
-@class UIButton;
+@class TPCloseNextButton;
 @class UIImageView;
+@class TPFlashButton;
 @class UITextView;
+@class UIButton;
 @class NSLayoutConstraint;
 @class NSCoder;
 
@@ -271,22 +273,22 @@ SWIFT_CLASS("_TtC10TruePicSDK12TPCameraView")
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified timerLabel;
 @property (nonatomic, weak) IBOutlet UIView * _Null_unspecified statusView;
 @property (nonatomic, weak) IBOutlet UIView * _Null_unspecified statusTapArea;
-@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified closeViewButton;
+@property (nonatomic, weak) IBOutlet TPCloseNextButton * _Null_unspecified closeCameraButton;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified statusIndicator;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified statusText;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified statusArrow;
-@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified flashButton;
+@property (nonatomic, weak) IBOutlet TPFlashButton * _Null_unspecified flashButton;
 @property (nonatomic, weak) IBOutlet UIView * _Null_unspecified alertView;
 @property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified alertIcon;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified alertTitle;
 @property (nonatomic, weak) IBOutlet UITextView * _Null_unspecified alertBody;
-@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified closeButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified closeAlertButton;
 @property (nonatomic, weak) IBOutlet UIView * _Null_unspecified alignmentCrosshatch;
-@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified thumbnails;
-@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified photoCapture;
-@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified videoButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified galleryThumbnail;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified capturePhoto;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified captureVideoButton;
 @property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified mediaTypeButton;
-@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified toggleFrontBackCamera;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified frontBackButton;
 @property (nonatomic, weak) IBOutlet UIView * _Null_unspecified noTapToFocusArea;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified statusViewTop;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified statusTitleWidth;
@@ -299,15 +301,15 @@ SWIFT_CLASS("_TtC10TruePicSDK12TPCameraView")
 
 
 
+
+@interface TPCameraView (SWIFT_EXTENSION(TruePicSDK))
+- (IBAction)mediaType:(UIButton * _Nonnull)button;
+@end
+
 @class UITapGestureRecognizer;
 
 @interface TPCameraView (SWIFT_EXTENSION(TruePicSDK))
 - (IBAction)focusOnTap:(UITapGestureRecognizer * _Nonnull)gestureRecognizer;
-@end
-
-
-@interface TPCameraView (SWIFT_EXTENSION(TruePicSDK))
-- (IBAction)mediaType:(UIButton * _Nonnull)button;
 @end
 
 
@@ -323,7 +325,7 @@ SWIFT_CLASS("_TtC10TruePicSDK12TPCameraView")
 
 @interface TPCameraView (SWIFT_EXTENSION(TruePicSDK))
 - (void)awakeFromNib;
-- (IBAction)closeView;
+- (IBAction)closeCameraView:(UIButton * _Nonnull)button;
 - (IBAction)pinchToZoom:(UIPinchGestureRecognizer * _Nonnull)gestureRecognizer;
 - (BOOL)textView:(UITextView * _Nonnull)textView shouldInteractWithURL:(NSURL * _Nonnull)URL inRange:(NSRange)characterRange interaction:(UITextItemInteraction)interaction SWIFT_WARN_UNUSED_RESULT;
 @end
@@ -344,11 +346,22 @@ SWIFT_CLASS("_TtC10TruePicSDK22TPCaptureTapRecognizer")
 - (nonnull instancetype)initWithTarget:(id _Nullable)target action:(SEL _Nullable)action OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class TPPreviewView;
 
-SWIFT_CLASS("_TtC10TruePicSDK15TPContainerView")
-@interface TPContainerView : UIView
-@property (nonatomic, weak) IBOutlet TPPreviewView * _Null_unspecified videoPreview;
+SWIFT_CLASS("_TtC10TruePicSDK17TPCloseNextButton")
+@interface TPCloseNextButton : UIButton
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified closeButtonWidth;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified closeButtonHeight;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified closeButtonLeading;
+@property (nonatomic, getter=isEnabled) BOOL enabled;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class TPLivePreview;
+
+SWIFT_CLASS("_TtC10TruePicSDK24TPEnclosingContainerView")
+@interface TPEnclosingContainerView : UIView
+@property (nonatomic, weak) IBOutlet TPLivePreview * _Null_unspecified videoPreview;
 @property (nonatomic, weak) IBOutlet TPCameraView * _Null_unspecified truepicView;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified videoPreviewTop;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified videoPreviewBottom;
@@ -357,6 +370,14 @@ SWIFT_CLASS("_TtC10TruePicSDK15TPContainerView")
 @end
 
 
+
+
+SWIFT_CLASS("_TtC10TruePicSDK13TPFlashButton")
+@interface TPFlashButton : UIButton
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified flashButtonTrailing;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
 
 
 SWIFT_CLASS("_TtC10TruePicSDK16TPFocusAnimation")
@@ -385,6 +406,18 @@ SWIFT_CLASS("_TtC10TruePicSDK15TPGalleryItemOp")
 @end
 
 
+SWIFT_CLASS("_TtC10TruePicSDK13TPLivePreview")
+@interface TPLivePreview : UIView
+- (void)awakeFromNib;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layerClass;)
++ (Class _Nonnull)layerClass SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+
 SWIFT_CLASS("_TtC10TruePicSDK12TPMetadataOp")
 @interface TPMetadataOp : TPGalleryItemOp
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
@@ -404,18 +437,6 @@ SWIFT_CLASS("_TtC10TruePicSDK15TPPhotoDelegate")
 - (void)captureOutput:(AVCapturePhotoOutput * _Nonnull)captureOutput didFinishCaptureForResolvedSettings:(AVCaptureResolvedPhotoSettings * _Nonnull)resolvedSettings error:(NSError * _Nullable)error;
 - (void)captureOutput:(AVCapturePhotoOutput * _Nonnull)output didFinishProcessingPhoto:(AVCapturePhoto * _Nonnull)photo error:(NSError * _Nullable)error SWIFT_AVAILABILITY(ios,introduced=11.0);
 - (void)captureOutput:(AVCapturePhotoOutput * _Nonnull)output didFinishProcessingPhotoSampleBuffer:(CMSampleBufferRef _Nullable)photoSampleBuffer previewPhotoSampleBuffer:(CMSampleBufferRef _Nullable)previewPhotoSampleBuffer resolvedSettings:(AVCaptureResolvedPhotoSettings * _Nonnull)resolvedSettings bracketSettings:(AVCaptureBracketedStillImageSettings * _Nullable)bracketSettings error:(NSError * _Nullable)error;
-@end
-
-
-
-
-SWIFT_CLASS("_TtC10TruePicSDK13TPPreviewView")
-@interface TPPreviewView : UIView
-- (void)awakeFromNib;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) Class _Nonnull layerClass;)
-+ (Class _Nonnull)layerClass SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -464,7 +485,7 @@ SWIFT_CLASS("_TtC10TruePicSDK15TPVideoDelegate")
 
 SWIFT_CLASS("_TtC10TruePicSDK21TruePicViewController")
 @interface TruePicViewController : UIViewController
-@property (nonatomic, weak) IBOutlet TPPreviewView * _Null_unspecified videoPreview;
+@property (nonatomic, weak) IBOutlet TPLivePreview * _Null_unspecified videoPreview;
 @property (nonatomic, weak) IBOutlet TPCameraView * _Null_unspecified truePicView;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -492,6 +513,8 @@ SWIFT_CLASS("_TtC10TruePicSDK21TruePicViewController")
 @property (nonatomic, readonly) BOOL shouldAutorotate;
 @property (nonatomic, readonly) BOOL prefersStatusBarHidden;
 @end
+
+
 
 
 
