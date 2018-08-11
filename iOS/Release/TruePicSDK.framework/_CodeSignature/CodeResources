@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		06GvBtqBYxH7Ccl+4iZIEfqc7VQ=
+		rZs/GSY4MKr/M8r5f6yqBtxe2kg=
 		</data>
 		<key>Headers/TruePic.h</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		MUhFL15Ksvudy8630MyuZHa6d0Y=
+		wn1k/Q0e/K8Xp4Nz6bgfFmQWtJQ=
 		</data>
 		<key>Localizable.strings</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>TruePic.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib</key>
 		<data>
-		Hvl3VmU/HCeCox6csRQTPdm74sE=
+		QIm2lePQfecy6RHwaNNXX/HPaB8=
 		</data>
 		<key>TruePic.storyboardc/Info.plist</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>TruePic.storyboardc/TruePicViewController.nib</key>
 		<data>
-		XJhDePNElc6VlGLlUC7abg63QZc=
+		cDJV783zzf44qoBj3WHjhQqyDTg=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -79,11 +79,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			06GvBtqBYxH7Ccl+4iZIEfqc7VQ=
+			rZs/GSY4MKr/M8r5f6yqBtxe2kg=
 			</data>
 			<key>hash2</key>
 			<data>
-			OBsGxWjuX4y87eDT4xU+mF85b3/5+WWJUh00cAoJMGY=
+			Tb8ld5X89TXslHPrWbnJMkNm9cOtbraK/Xc3bOv6Y40=
 			</data>
 		</dict>
 		<key>Headers/TruePic.h</key>
@@ -222,11 +222,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Hvl3VmU/HCeCox6csRQTPdm74sE=
+			QIm2lePQfecy6RHwaNNXX/HPaB8=
 			</data>
 			<key>hash2</key>
 			<data>
-			O9WJbPfmlG3jNlbLnhZRv1PLK8y0NluPpdIicjsuu74=
+			PO0nKZPBulqyWhofGY38hGhfjPV2FKb6XWgSW8/b8kI=
 			</data>
 		</dict>
 		<key>TruePic.storyboardc/Info.plist</key>
@@ -244,11 +244,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XJhDePNElc6VlGLlUC7abg63QZc=
+			cDJV783zzf44qoBj3WHjhQqyDTg=
 			</data>
 			<key>hash2</key>
 			<data>
-			xuJTBRk+RWYvuoAAU+2nRGf5qweMMUCEz7mHocdPBTI=
+			/a+nbHULOzWXnQPy/LsMIB0VTB5f7HD2TnGVFtKKM30=
 			</data>
 		</dict>
 	</dict>
