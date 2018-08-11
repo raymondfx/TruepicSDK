@@ -4,7 +4,7 @@ An iOS Framework that verifies photos and videos with Truepic.
 
 ## [API Documentation](Truepic_iOS_SDK.pdf)
 
-## Changes for build: 87b
+## Changes for build: 87.1
 1. Now refresh token if uniqueID is changed.
 
 ###  API changes (from build 87)
