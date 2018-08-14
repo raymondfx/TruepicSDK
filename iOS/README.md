@@ -4,6 +4,18 @@ An iOS Framework that verifies photos and videos with Truepic.
 
 ## [API Documentation](Truepic_iOS_SDK.pdf)
 
+## Changes for build: 89
+1. Fixed stale thumbnails after deletion, and way simplified code.
+2. Fix for accurate location never getting recived.
+    - Put retries in for configuration calls to fix bug where location is never set if config call fails when camera first opened. 
+    - Also cleaned up code so status updates correctly whenever config call completes.
+3. Fixed bug that could cause next button to open partly offscreen on iPhone 5 sized devices.
+
+###  API changes 
+1. Now request location permissions when first config call is called from app (instead of when camera view opens), so that camera view can initialize faster.
+    - To make best use of this, the VIsion/JMI apps should be updated to call config from an initial walkthough page with explanation text telling user why they should authorize locations. 
+2.  Added setUserName() back to Config API. This passes the userName to the server to watermark photos with.
+
 ## Changes for build: 87.1
 1. Now refresh token if uniqueID is changed.
 

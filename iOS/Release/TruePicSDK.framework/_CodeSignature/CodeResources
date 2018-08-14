@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		rZs/GSY4MKr/M8r5f6yqBtxe2kg=
+		dDA4LbDLz3Zwl8yJl1y8EE0QrEY=
 		</data>
 		<key>Headers/TruePic.h</key>
 		<data>
@@ -14,31 +14,31 @@
 		</data>
 		<key>Headers/TruePicSDK-Swift.h</key>
 		<data>
-		2juj2s+nsXsPRA1yX6SuLotV18U=
+		dwu01Lhk6qIQ2Dx+tLxcvy8ao+8=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		wn1k/Q0e/K8Xp4Nz6bgfFmQWtJQ=
+		5H1n9pMTdRkIFlH4b/nzEXdC0dM=
 		</data>
 		<key>Localizable.strings</key>
 		<data>
-		dJQM1+UD3CyLB4HW6QkN+X+9ilI=
+		vwcM8IRw4Zx7KQsg6hy+CPbFfEY=
 		</data>
 		<key>Modules/TruePicSDK.swiftmodule/arm.swiftdoc</key>
 		<data>
-		1QcOKd09yCWYZLKsCwmYvA1RTYA=
+		gGxuGx3Hy919Raw+EBnt9yfABw4=
 		</data>
 		<key>Modules/TruePicSDK.swiftmodule/arm.swiftmodule</key>
 		<data>
-		EMf0bbWNMr2HTL2ARZTeA4FbgMo=
+		odPbE/eN80CoQoce/EoLq5VY/cY=
 		</data>
 		<key>Modules/TruePicSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		c1R7NQ2oeN1crBhJFas5HOkhI+o=
+		Vt+mSxLoJjGEFt24HuXKrclhAko=
 		</data>
 		<key>Modules/TruePicSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		96XFxAIqn1jE+j7JYo0D1TunFNQ=
+		fAqTK9HNM0lXGxPOlBY4itPc5d0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>TruePic.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib</key>
 		<data>
-		QIm2lePQfecy6RHwaNNXX/HPaB8=
+		MVUkqCpyAH0YhRQvlpXTX+aUA/s=
 		</data>
 		<key>TruePic.storyboardc/Info.plist</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>TruePic.storyboardc/TruePicViewController.nib</key>
 		<data>
-		cDJV783zzf44qoBj3WHjhQqyDTg=
+		h3+Oz1PhhbNsqvhhbJ9Yo9NVG58=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -79,11 +79,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rZs/GSY4MKr/M8r5f6yqBtxe2kg=
+			dDA4LbDLz3Zwl8yJl1y8EE0QrEY=
 			</data>
 			<key>hash2</key>
 			<data>
-			Tb8ld5X89TXslHPrWbnJMkNm9cOtbraK/Xc3bOv6Y40=
+			azNY9ZNq5aEDbpMKWVJ9Jp4yoWo1ZoaS8gApD3IwAY0=
 			</data>
 		</dict>
 		<key>Headers/TruePic.h</key>
@@ -101,66 +101,66 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2juj2s+nsXsPRA1yX6SuLotV18U=
+			dwu01Lhk6qIQ2Dx+tLxcvy8ao+8=
 			</data>
 			<key>hash2</key>
 			<data>
-			vivE7Rcd61V6s8d36rletXyeFVn429cN/jQFObhDciM=
+			MuPm9+p4b9nszWFi4NU88H4BhOddLdWcuT9UHnKGqTI=
 			</data>
 		</dict>
 		<key>Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			dJQM1+UD3CyLB4HW6QkN+X+9ilI=
+			vwcM8IRw4Zx7KQsg6hy+CPbFfEY=
 			</data>
 			<key>hash2</key>
 			<data>
-			muC9jSZKmWJLcV6s63tpaehKOrBQHe6Y3RgUwj82cHA=
+			Lhz+6+Y5ZkRsbJkRS57Xm1BTtCsoRFe0L7lSEaxpmrE=
 			</data>
 		</dict>
 		<key>Modules/TruePicSDK.swiftmodule/arm.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			1QcOKd09yCWYZLKsCwmYvA1RTYA=
+			gGxuGx3Hy919Raw+EBnt9yfABw4=
 			</data>
 			<key>hash2</key>
 			<data>
-			oKkQmE2qTMnjN532AnSXvU+nVe5L4LwTsjJlxT4ddf4=
+			43PP+taDYqDOFjLDNQepJ93pvF5mzl/BC5AjnPmjIzM=
 			</data>
 		</dict>
 		<key>Modules/TruePicSDK.swiftmodule/arm.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			EMf0bbWNMr2HTL2ARZTeA4FbgMo=
+			odPbE/eN80CoQoce/EoLq5VY/cY=
 			</data>
 			<key>hash2</key>
 			<data>
-			ihNGhyPl8B2Tld9Srul0CumYmKLBUzZEkXGA4HTl6rM=
+			Zg39epy01X0ITV0dOAU/9YKJY6qQnSY6Y4VCQqgKhC8=
 			</data>
 		</dict>
 		<key>Modules/TruePicSDK.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			c1R7NQ2oeN1crBhJFas5HOkhI+o=
+			Vt+mSxLoJjGEFt24HuXKrclhAko=
 			</data>
 			<key>hash2</key>
 			<data>
-			bUkMZis8bIr0206jgdQo6EYXsqJX0RTRMJZke1ZavqQ=
+			PwjcpUDFYAqSkrBvl5mPZOw1yG720881pJC42lQxBQw=
 			</data>
 		</dict>
 		<key>Modules/TruePicSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			96XFxAIqn1jE+j7JYo0D1TunFNQ=
+			fAqTK9HNM0lXGxPOlBY4itPc5d0=
 			</data>
 			<key>hash2</key>
 			<data>
-			kxyTCf/W3X2JOQEnANTDYjWPZUFmiWB6wCiUUpaP9/I=
+			as8mmMY6Hx+lrtA/ahViApfZeAjyR7E4ZRr1x7fcpXM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -222,11 +222,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			QIm2lePQfecy6RHwaNNXX/HPaB8=
+			MVUkqCpyAH0YhRQvlpXTX+aUA/s=
 			</data>
 			<key>hash2</key>
 			<data>
-			PO0nKZPBulqyWhofGY38hGhfjPV2FKb6XWgSW8/b8kI=
+			YniNQpBIgEERB9tFl24FMtpKaqWTnOuJOeuVZtEQ0Fc=
 			</data>
 		</dict>
 		<key>TruePic.storyboardc/Info.plist</key>
@@ -244,11 +244,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			cDJV783zzf44qoBj3WHjhQqyDTg=
+			h3+Oz1PhhbNsqvhhbJ9Yo9NVG58=
 			</data>
 			<key>hash2</key>
 			<data>
-			/a+nbHULOzWXnQPy/LsMIB0VTB5f7HD2TnGVFtKKM30=
+			a3rF/uZHltenFnmZl3Tg/4cQiIy4ymzdaCknBFm84cQ=
 			</data>
 		</dict>
 	</dict>
