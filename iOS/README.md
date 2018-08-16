@@ -4,6 +4,18 @@ An iOS Framework that verifies photos and videos with Truepic.
 
 ## [API Documentation](Truepic_iOS_SDK.pdf)
 
+## Changes for build: 91
+1. Fixed location permissions bug that wasn't giving correct error text in drawer.
+3. Fixed thumbnail not showing when camera view re-opened bug
+4. Updated crashalytics in TestPic.
+-5. More logging inför for test.io bugs.
+
+- SDK Updates
+- Make sure Jonathon turns on right options
+options.insert(.hideTruepicBranding)
+options.insert(.disableMediaSelection)
+## Changes for build: 90 - None, aborted build
+
 ## Changes for build: 89
 1. Fixed stale thumbnails after deletion, and way simplified code.
 2. Fix for accurate location never getting recived.
