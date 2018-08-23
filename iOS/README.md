@@ -4,19 +4,30 @@ An iOS Framework that verifies photos and videos with Truepic.
 
 ## [API Documentation](Truepic_iOS_SDK.pdf)
 
-## Changes for build: 91
+## Build 93
+### Fixes/Changes
+1. Fixed crash in image processing frame capture on devices that don’t support 60 FPS.
+2. Added config option for to turn image processing on/off, off now also turns off frame capture so image processing code should not impact SDK performance for apps that aren’t using it.
+3. Cleaned up TestPic so test.io testers will hopefully generate fewer issues on how it works, as opposed to how camera works.
+
+### SDK changes
+1. Local id of a gallery item, formerly ```TPGalleryItem.uniqueID```  is now  ```TPGalleryItem.galleryID```
+2. ```TPGalleryItem.uniqueID``` is now the  uniqueID passed to server for captures, which TPVision uses to identify events.
+3. ```CameraViewOptions``` is now ```CameraOptions``` and no longer based on an OptionSet (bitwise storage). Now each option is defined as a ```CameraOption``` enum.
+
+## Build 91
 1. Fixed location permissions bug that wasn't giving correct error text in drawer.
 3. Fixed thumbnail not showing when camera view re-opened bug
 4. Updated crashalytics in TestPic.
 -5. More logging inför for test.io bugs.
 
-- SDK Updates
-- Make sure Jonathon turns on right options
-options.insert(.hideTruepicBranding)
+### SDK Updates
+1.Make sure Jonathon turns on right options
+```options.insert(.hideTruepicBranding)
 options.insert(.disableMediaSelection)
-## Changes for build: 90 - None, aborted build
+```
 
-## Changes for build: 89
+## Build 89
 1. Fixed stale thumbnails after deletion, and way simplified code.
 2. Fix for accurate location never getting recived.
     - Put retries in for configuration calls to fix bug where location is never set if config call fails when camera first opened. 
@@ -28,7 +39,7 @@ options.insert(.disableMediaSelection)
     - To make best use of this, the VIsion/JMI apps should be updated to call config from an initial walkthough page with explanation text telling user why they should authorize locations. 
 2.  Added setUserName() back to Config API. This passes the userName to the server to watermark photos with.
 
-## Changes for build: 87.1
+## Build 87.1
 1. Now refresh token if uniqueID is changed.
 
 ###  API changes (from build 87)

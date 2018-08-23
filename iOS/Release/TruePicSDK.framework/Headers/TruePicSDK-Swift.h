@@ -288,15 +288,15 @@ SWIFT_CLASS("_TtC10TruePicSDK12TPCameraView")
 
 
 
+
+@interface TPCameraView (SWIFT_EXTENSION(TruePicSDK))
+- (IBAction)mediaType:(UIButton * _Nonnull)button;
+@end
+
 @class UITapGestureRecognizer;
 
 @interface TPCameraView (SWIFT_EXTENSION(TruePicSDK))
 - (IBAction)focusOnTap:(UITapGestureRecognizer * _Nonnull)gestureRecognizer;
-@end
-
-
-@interface TPCameraView (SWIFT_EXTENSION(TruePicSDK))
-- (IBAction)mediaType:(UIButton * _Nonnull)button;
 @end
 
 
@@ -322,15 +322,6 @@ SWIFT_CLASS("_TtC10TruePicSDK17TPCaptureDelegate")
 @interface TPCaptureDelegate : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
-@end
-
-@class UITouch;
-@class UIEvent;
-
-SWIFT_CLASS("_TtC10TruePicSDK22TPCaptureTapRecognizer")
-@interface TPCaptureTapRecognizer : UITapGestureRecognizer
-- (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nonnull)event;
-- (nonnull instancetype)initWithTarget:(id _Nullable)target action:(SEL _Nullable)action OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -372,6 +363,16 @@ SWIFT_CLASS("_TtC10TruePicSDK16TPFocusAnimation")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+@class AVCaptureOutput;
+@class AVCaptureConnection;
+
+SWIFT_CLASS("_TtC10TruePicSDK22TPFrameCaptureDelegate")
+@interface TPFrameCaptureDelegate : NSObject <AVCaptureVideoDataOutputSampleBufferDelegate>
+- (void)captureOutput:(AVCaptureOutput * _Nonnull)output didDropSampleBuffer:(CMSampleBufferRef _Nonnull)sampleBuffer fromConnection:(AVCaptureConnection * _Nonnull)connection;
+- (void)captureOutput:(AVCaptureOutput * _Nonnull)output didOutputSampleBuffer:(CMSampleBufferRef _Nonnull)sampleBuffer fromConnection:(AVCaptureConnection * _Nonnull)connection;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -444,6 +445,15 @@ SWIFT_CLASS("_TtC10TruePicSDK14TPSentryLogger")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UITouch;
+@class UIEvent;
+
+SWIFT_CLASS("_TtC10TruePicSDK15TPTapRecognizer")
+@interface TPTapRecognizer : UITapGestureRecognizer
+- (void)touchesBegan:(NSSet<UITouch *> * _Nonnull)touches withEvent:(UIEvent * _Nonnull)event;
+- (nonnull instancetype)initWithTarget:(id _Nullable)target action:(SEL _Nullable)action OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC10TruePicSDK20TPUploadTaskDelegate")
 @interface TPUploadTaskDelegate : NSObject
@@ -471,7 +481,6 @@ SWIFT_CLASS("_TtC10TruePicSDK20TPUploadTaskDelegate")
 @end
 
 @class AVCaptureFileOutput;
-@class AVCaptureConnection;
 
 SWIFT_CLASS("_TtC10TruePicSDK15TPVideoDelegate")
 @interface TPVideoDelegate : TPCaptureDelegate <AVCaptureFileOutputRecordingDelegate>
