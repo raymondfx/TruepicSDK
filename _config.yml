@@ -1,1 +1,4 @@
 theme: jekyll-theme-slate
+title: [The title of your site]
+description: A lean camera SDK for iOS and Android that provides built-in verification, authenticity and security for the photos and videos you capture
+show_downloads: true
