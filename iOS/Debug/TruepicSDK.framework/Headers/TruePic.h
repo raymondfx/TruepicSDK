@@ -2,7 +2,7 @@
 //  TruePic.h
 //  TruePic
 //
-//  Created by Matthew Carroll on 3/27/17.
+//  Rewritten by Randy Hill, 2018 - Created by Matthew Carroll on 3/27/17.
 //  Copyright © 2017 Truepic Inc. All rights reserved.
 //
 

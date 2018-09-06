@@ -205,6 +205,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+
+
 SWIFT_CLASS("_TtC10TruePicSDK25MainThreadBlockingMonitor")
 @interface MainThreadBlockingMonitor : NSThread
 - (void)main;
@@ -251,17 +253,32 @@ SWIFT_CLASS("_TtC10TruePicSDK12TPAsyncBlock")
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
 
+@class TPLivePreview;
+@class TPCameraView;
+@class NSLayoutConstraint;
+@class NSCoder;
+
+SWIFT_CLASS("_TtC10TruePicSDK18TPCameraParentView")
+@interface TPCameraParentView : UIView
+@property (nonatomic, weak) IBOutlet TPLivePreview * _Null_unspecified videoPreview;
+@property (nonatomic, weak) IBOutlet TPCameraView * _Null_unspecified truepicView;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified videoPreviewTop;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified videoPreviewBottom;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
 @class UILabel;
 @class TPCloseNextButton;
 @class UIImageView;
 @class TPFlashButton;
 @class UITextView;
 @class UIButton;
-@class NSLayoutConstraint;
-@class NSCoder;
 
 SWIFT_CLASS("_TtC10TruePicSDK12TPCameraView")
-@interface TPCameraView : UIView <UIGestureRecognizerDelegate, UITextViewDelegate>
+@interface TPCameraView : UIView <UIGestureRecognizerDelegate>
 @property (nonatomic, weak) IBOutlet UIView * _Null_unspecified statusAlertsDrawer;
 @property (nonatomic, weak) IBOutlet UIView * _Null_unspecified timerView;
 @property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified timerLabel;
@@ -294,34 +311,29 @@ SWIFT_CLASS("_TtC10TruePicSDK12TPCameraView")
 @end
 
 
-
-@class UITapGestureRecognizer;
-
-@interface TPCameraView (SWIFT_EXTENSION(TruePicSDK))
-- (IBAction)focusOnTap:(UITapGestureRecognizer * _Nonnull)gestureRecognizer;
-@end
-
-
-@interface TPCameraView (SWIFT_EXTENSION(TruePicSDK))
-- (IBAction)mediaType:(UIButton * _Nonnull)button;
-@end
-
-
-@interface TPCameraView (SWIFT_EXTENSION(TruePicSDK))
-- (IBAction)ignoreTaps:(UITapGestureRecognizer * _Nonnull)gestureRecognizer;
+@interface TPCameraView (SWIFT_EXTENSION(TruePicSDK)) <UITextViewDelegate>
+- (BOOL)textView:(UITextView * _Nonnull)textView shouldInteractWithURL:(NSURL * _Nonnull)URL inRange:(NSRange)characterRange interaction:(UITextItemInteraction)interaction SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
 
 
 
-@class UIPinchGestureRecognizer;
+
+
 
 @interface TPCameraView (SWIFT_EXTENSION(TruePicSDK))
 - (void)awakeFromNib;
-- (IBAction)closeCameraView:(UIButton * _Nonnull)button;
+@end
+
+@class UIPinchGestureRecognizer;
+@class UITapGestureRecognizer;
+
+@interface TPCameraView (SWIFT_EXTENSION(TruePicSDK))
 - (IBAction)pinchToZoom:(UIPinchGestureRecognizer * _Nonnull)gestureRecognizer;
-- (BOOL)textView:(UITextView * _Nonnull)textView shouldInteractWithURL:(NSURL * _Nonnull)URL inRange:(NSRange)characterRange interaction:(UITextItemInteraction)interaction SWIFT_WARN_UNUSED_RESULT;
+- (IBAction)mediaType:(UIButton * _Nonnull)button;
+- (IBAction)ignoreTaps:(UITapGestureRecognizer * _Nonnull)gestureRecognizer;
+- (IBAction)focusOnTap:(UITapGestureRecognizer * _Nonnull)gestureRecognizer;
 @end
 
 
@@ -341,20 +353,6 @@ SWIFT_CLASS("_TtC10TruePicSDK17TPCloseNextButton")
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
-
-@class TPLivePreview;
-
-SWIFT_CLASS("_TtC10TruePicSDK24TPEnclosingContainerView")
-@interface TPEnclosingContainerView : UIView
-@property (nonatomic, weak) IBOutlet TPLivePreview * _Null_unspecified videoPreview;
-@property (nonatomic, weak) IBOutlet TPCameraView * _Null_unspecified truepicView;
-@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified videoPreviewTop;
-@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified videoPreviewBottom;
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
 
 
 SWIFT_CLASS("_TtC10TruePicSDK13TPFlashButton")
@@ -499,7 +497,7 @@ SWIFT_CLASS("_TtC10TruePicSDK15TPVideoDelegate")
 SWIFT_CLASS("_TtC10TruePicSDK21TruePicViewController")
 @interface TruePicViewController : UIViewController
 @property (nonatomic, weak) IBOutlet TPLivePreview * _Null_unspecified videoPreview;
-@property (nonatomic, weak) IBOutlet TPCameraView * _Null_unspecified truePicView;
+@property (nonatomic, weak) IBOutlet TPCameraView * _Null_unspecified cameraView;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

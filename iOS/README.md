@@ -4,6 +4,30 @@ An iOS Framework that verifies photos and videos with Truepic.
 
 ## [API Documentation](Truepic_iOS_SDK.pdf)
 
+## Build 96
+### Fixes/Changes
+1. Video Uploads now work with v3 APIs.
+2. Now retry upload attempts with bad results data.
+3. Cap maximum upload attempts at 10 for each capture so we don't pound server if upload can never succeed. 
+4. Track whether uploads have been copied to camera roll, and copy to camera roll if upload is retried so users will always have access to their photos even if uploads go on for long periods.
+5. Fixed uploading Lens settings, wasn't working in apps do to different configuration pattern
+6. Now tag capture files with GPS location data, with config option so it's disabled unless app wants it turned on.
+7. Numerous other bugs fixed 
+* No longer store video uploads in iOS tmp directory, which risked being deleted behind our back before upload complete.
+* Filter out simultaneous taps on video capture and other buttons, to prevent camera/media being switched when video starts.
+* Fixed flash options so they update to proper available settings when switching media and front/back cameras
+* Now display verification erorr in  drawer error when no camera permissions.
+* Next button now only activated if Verification Enabled for new capture.
+* Next button wasn't updating in blue when activated.
+8. Now log errors from all guard statements that return in capture
+
+###  SDK Changes
+1. Added ```copiedToCameraRoll``` field in Gallery items.
+2. Renamed  ```TruePicViewController.CameraOptions``` to ```TPCameraOptions```
+3. Added ```tagFilesWithLocation``` option to camera options, to turn on EXIF location writing for both videos and photos. Default is not to save to EXIF in case privacy considerations doesn't allow it.
+
+## Build 94-95 Not released
+
 ## Build 93
 ### Fixes/Changes
 1. Fixed crash in image processing frame capture on devices that don’t support 60 FPS.
