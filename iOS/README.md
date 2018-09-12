@@ -4,6 +4,18 @@ An iOS Framework that verifies photos and videos with Truepic.
 
 ## [API Documentation](Truepic_iOS_SDK.pdf)
 
+## Build 97
+1. Increased compression quality to 99% (from est. iOS default of 80%) to improve server image verification results. 
+We chose 99% after testing 80-100%, it seemed to offer highest quality for increase in file size. On my iPhone X old default was generating upload files of 4-5 megabytes, 99% in tests averaged between 6-7.1 megabyte files with a 4x better quality level for image processing needs.
+2. Capture button now disabled when Verification disabled when SDK in "Vision mode"
+2. Fixed titles of error alerts, they now use name of app in title, such as "Vision Error", etc.
+3. Now including extra information with uploads 
+-  The On/off status of tap to focus (TTF).
+-  The level of Compression quality image was taken.
+
+### SDK API Changes
+- truePicBranding is now runInVisionMode
+
 ## Build 96
 ### Fixes/Changes
 1. Video Uploads now work with v3 APIs.

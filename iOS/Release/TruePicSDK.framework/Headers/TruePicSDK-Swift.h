@@ -164,9 +164,9 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if __has_feature(modules)
 @import AVFoundation;
+@import Foundation;
 @import CoreImage;
 @import CoreLocation;
-@import Foundation;
 @import UIKit;
 @import CoreGraphics;
 @import ObjectiveC;
@@ -187,6 +187,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma clang attribute push(__attribute__((external_source_symbol(language="Swift", defined_in="TruePicSDK",generated_declaration))), apply_to=any(function,enum,objc_interface,objc_category,objc_protocol))
 # pragma pop_macro("any")
 #endif
+
+
 
 
 
@@ -460,15 +462,15 @@ SWIFT_CLASS("_TtC10TruePicSDK20TPUploadTaskDelegate")
 @end
 
 @class NSURLSession;
+
+@interface TPUploadTaskDelegate (SWIFT_EXTENSION(TruePicSDK)) <NSURLSessionDelegate>
+- (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession * _Nonnull)session;
+@end
+
 @class NSURLSessionDataTask;
 
 @interface TPUploadTaskDelegate (SWIFT_EXTENSION(TruePicSDK)) <NSURLSessionDataDelegate>
 - (void)URLSession:(NSURLSession * _Nonnull)session dataTask:(NSURLSessionDataTask * _Nonnull)dataTask didReceiveData:(NSData * _Nonnull)data;
-@end
-
-
-@interface TPUploadTaskDelegate (SWIFT_EXTENSION(TruePicSDK)) <NSURLSessionDelegate>
-- (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession * _Nonnull)session;
 @end
 
 @class NSURLSessionTask;
@@ -485,7 +487,6 @@ SWIFT_CLASS("_TtC10TruePicSDK15TPVideoDelegate")
 - (void)captureOutput:(AVCaptureFileOutput * _Nonnull)output didFinishRecordingToOutputFileAtURL:(NSURL * _Nonnull)outputFileURL fromConnections:(NSArray<AVCaptureConnection *> * _Nonnull)connections error:(NSError * _Nullable)error;
 @end
 
-@class NSBundle;
 
 SWIFT_CLASS("_TtC10TruePicSDK21TruePicViewController")
 @interface TruePicViewController : UIViewController
