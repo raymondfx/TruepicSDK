@@ -4,7 +4,7 @@ An Android library that verifies photos and videos with Truepic.
 
 ## Version: v2.0.7.1 SDK .AAR
 
-## Latest Changes: Updates to the capture experience, UI bug fixes, performance fine-tuning
+## Latest Changes: 
 ### Tap to focus updates (quality improvement) 
 ### Image quality and jpeg compression fine-tuning for computer vision 
 ### Text and UI updates for disabled modes (text and capture button etc)
