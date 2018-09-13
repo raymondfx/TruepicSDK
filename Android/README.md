@@ -12,5 +12,5 @@ An Android library that verifies photos and videos with Truepic.
 ### Added a new time-out mechanism for the pre-capture sequence to avoid issues when we can't get reliable values for exposure & focus)
 
 
-## [API Documentation](Truepic Android SDK.pdf)
+## [API Documentation](Truepic_AndroidSDK_API.pdf)
 
