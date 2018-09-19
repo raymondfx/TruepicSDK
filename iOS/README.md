@@ -4,6 +4,13 @@ An iOS Framework that verifies photos and videos with Truepic.
 
 ## [API Documentation](Truepic_iOS_SDK.pdf)
 
+## Build 100
+1) Implemented MixPanel, now logging action to "iOS SDK" project in our MixPanel account. This release logs taps on
+- Next button (enabled or disabled)
+- Gallery button
+- Capture button (enabled or disabled)
+- Status area, whether opening/closing and whether camera is enabled or disabled 
+
 ## Build 99
 1) Now the default (enabled camera) alert drawer icon and status indicator icons are turned into template images, and a brand color applied to them..
 
