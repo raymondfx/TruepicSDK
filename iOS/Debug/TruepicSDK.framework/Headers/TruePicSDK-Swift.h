@@ -164,12 +164,12 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if __has_feature(modules)
 @import AVFoundation;
+@import UIKit;
 @import Foundation;
 @import CoreImage;
 @import CoreLocation;
-@import UIKit;
-@import CoreGraphics;
 @import ObjectiveC;
+@import CoreGraphics;
 @import CoreMedia;
 #endif
 
@@ -190,6 +190,58 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+@class NSBundle;
+@class NSCoder;
+
+SWIFT_CLASS("_TtC10TruePicSDK30BaseNotificationViewController")
+@interface BaseNotificationViewController : UIViewController
+@property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
+@property (nonatomic, readonly) BOOL shouldAutorotate;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+
+SWIFT_CLASS_NAMED("CGAffineTransformToNSDictionary")
+@interface CGAffineTransformToNSDictionary : NSValueTransformer
++ (Class _Nonnull)transformedValueClass SWIFT_WARN_UNUSED_RESULT;
++ (BOOL)allowsReverseTransformation SWIFT_WARN_UNUSED_RESULT;
+- (id _Nullable)transformedValue:(id _Nullable)value SWIFT_WARN_UNUSED_RESULT;
+- (id _Nullable)reverseTransformedValue:(id _Nullable)value SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS_NAMED("CGPointToNSDictionary")
+@interface CGPointToNSDictionary : NSValueTransformer
++ (Class _Nonnull)transformedValueClass SWIFT_WARN_UNUSED_RESULT;
++ (BOOL)allowsReverseTransformation SWIFT_WARN_UNUSED_RESULT;
+- (id _Nullable)transformedValue:(id _Nullable)value SWIFT_WARN_UNUSED_RESULT;
+- (id _Nullable)reverseTransformedValue:(id _Nullable)value SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS_NAMED("CGRectToNSDictionary")
+@interface CGRectToNSDictionary : NSValueTransformer
++ (Class _Nonnull)transformedValueClass SWIFT_WARN_UNUSED_RESULT;
++ (BOOL)allowsReverseTransformation SWIFT_WARN_UNUSED_RESULT;
+- (id _Nullable)transformedValue:(id _Nullable)value SWIFT_WARN_UNUSED_RESULT;
+- (id _Nullable)reverseTransformedValue:(id _Nullable)value SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS_NAMED("CGSizeToNSDictionary")
+@interface CGSizeToNSDictionary : NSValueTransformer
++ (Class _Nonnull)transformedValueClass SWIFT_WARN_UNUSED_RESULT;
++ (BOOL)allowsReverseTransformation SWIFT_WARN_UNUSED_RESULT;
+- (id _Nullable)transformedValue:(id _Nullable)value SWIFT_WARN_UNUSED_RESULT;
+- (id _Nullable)reverseTransformedValue:(id _Nullable)value SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
 
 
 
@@ -200,11 +252,46 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
+SWIFT_CLASS("_TtC10TruePicSDK15CodelessBinding")
+@interface CodelessBinding : NSObject <NSCoding>
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)encodeWithCoder:(NSCoder * _Nonnull)aCoder;
+- (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) NSUInteger hash;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+@end
+
+
+
+
+SWIFT_CLASS("_TtC10TruePicSDK10FadingView")
+@interface FadingView : UIView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)layoutSubviews;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
 
 
 
 
 
+
+SWIFT_CLASS_NAMED("IdentityTransformer")
+@interface IdentityTransformer : NSValueTransformer
++ (Class _Nonnull)transformedValueClass SWIFT_WARN_UNUSED_RESULT;
++ (BOOL)allowsReverseTransformation SWIFT_WARN_UNUSED_RESULT;
+- (id _Nullable)transformedValue:(id _Nullable)value SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC10TruePicSDK15InAppButtonView")
+@interface InAppButtonView : UIButton
+@property (nonatomic, getter=isHighlighted) BOOL highlighted;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
 
 
 
@@ -216,6 +303,34 @@ SWIFT_CLASS("_TtC10TruePicSDK25MainThreadBlockingMonitor")
 @end
 
 
+
+@class UIImageView;
+@class UILabel;
+@class UITapGestureRecognizer;
+@class UIPanGestureRecognizer;
+@protocol UIViewControllerTransitionCoordinator;
+
+SWIFT_CLASS("_TtC10TruePicSDK30MiniNotificationViewController")
+@interface MiniNotificationViewController : BaseNotificationViewController
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified imageView;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified bodyLabel;
+- (void)viewDidLoad;
+- (void)didTapWithGesture:(UITapGestureRecognizer * _Nonnull)gesture;
+- (void)didPanWithGesture:(UIPanGestureRecognizer * _Nonnull)gesture;
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator> _Nonnull)coordinator;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS_NAMED("NSAttributedStringToNSDictionary")
+@interface NSAttributedStringToNSDictionary : NSValueTransformer
++ (Class _Nonnull)transformedValueClass SWIFT_WARN_UNUSED_RESULT;
++ (BOOL)allowsReverseTransformation SWIFT_WARN_UNUSED_RESULT;
+- (id _Nullable)transformedValue:(id _Nullable)value SWIFT_WARN_UNUSED_RESULT;
+- (id _Nullable)reverseTransformedValue:(id _Nullable)value SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
 
 
 
@@ -231,6 +346,17 @@ SWIFT_CLASS("_TtC10TruePicSDK25MainThreadBlockingMonitor")
 
 
 
+
+
+
+
+SWIFT_CLASS("_TtC10TruePicSDK14ObjectSelector")
+@interface ObjectSelector : NSObject
+- (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) NSUInteger hash;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+@end
 
 
 
@@ -258,7 +384,6 @@ SWIFT_CLASS("_TtC10TruePicSDK12TPAsyncBlock")
 @class TPLivePreview;
 @class TPCameraView;
 @class NSLayoutConstraint;
-@class NSCoder;
 
 SWIFT_CLASS("_TtC10TruePicSDK18TPCameraParentView")
 @interface TPCameraParentView : UIView
@@ -272,12 +397,9 @@ SWIFT_CLASS("_TtC10TruePicSDK18TPCameraParentView")
 
 
 
-@class UILabel;
 @class TPCloseNextButton;
-@class UIImageView;
 @class TPFlashButton;
 @class UITextView;
-@class UIButton;
 
 SWIFT_CLASS("_TtC10TruePicSDK12TPCameraView")
 @interface TPCameraView : UIView <UIGestureRecognizerDelegate>
@@ -322,14 +444,13 @@ SWIFT_CLASS("_TtC10TruePicSDK12TPCameraView")
 
 
 
+
+
 @interface TPCameraView (SWIFT_EXTENSION(TruePicSDK))
 - (void)awakeFromNib;
 @end
 
-
-
 @class UIPinchGestureRecognizer;
-@class UITapGestureRecognizer;
 
 @interface TPCameraView (SWIFT_EXTENSION(TruePicSDK))
 - (IBAction)pinchToZoom:(UIPinchGestureRecognizer * _Nonnull)gestureRecognizer;
@@ -345,12 +466,14 @@ SWIFT_CLASS("_TtC10TruePicSDK17TPCaptureDelegate")
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
 
+@class TPTapRecognizer;
 
 SWIFT_CLASS("_TtC10TruePicSDK17TPCloseNextButton")
 @interface TPCloseNextButton : UIButton
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified closeButtonWidth;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified closeButtonHeight;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified closeButtonLeading;
+- (void)nextButtonTappedWithTap:(TPTapRecognizer * _Nonnull)tap;
 @property (nonatomic, getter=isEnabled) BOOL enabled;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
@@ -469,15 +592,15 @@ SWIFT_CLASS("_TtC10TruePicSDK20TPUploadTaskDelegate")
 @end
 
 @class NSURLSession;
+
+@interface TPUploadTaskDelegate (SWIFT_EXTENSION(TruePicSDK)) <NSURLSessionDelegate>
+- (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession * _Nonnull)session;
+@end
+
 @class NSURLSessionDataTask;
 
 @interface TPUploadTaskDelegate (SWIFT_EXTENSION(TruePicSDK)) <NSURLSessionDataDelegate>
 - (void)URLSession:(NSURLSession * _Nonnull)session dataTask:(NSURLSessionDataTask * _Nonnull)dataTask didReceiveData:(NSData * _Nonnull)data;
-@end
-
-
-@interface TPUploadTaskDelegate (SWIFT_EXTENSION(TruePicSDK)) <NSURLSessionDelegate>
-- (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession * _Nonnull)session;
 @end
 
 @class NSURLSessionTask;
@@ -492,6 +615,28 @@ SWIFT_CLASS("_TtC10TruePicSDK20TPUploadTaskDelegate")
 SWIFT_CLASS("_TtC10TruePicSDK15TPVideoDelegate")
 @interface TPVideoDelegate : TPCaptureDelegate <AVCaptureFileOutputRecordingDelegate>
 - (void)captureOutput:(AVCaptureFileOutput * _Nonnull)output didFinishRecordingToOutputFileAtURL:(NSURL * _Nonnull)outputFileURL fromConnections:(NSArray<AVCaptureConnection *> * _Nonnull)connections error:(NSError * _Nullable)error;
+@end
+
+
+SWIFT_CLASS("_TtC10TruePicSDK34TakeoverNotificationViewController")
+@interface TakeoverNotificationViewController : BaseNotificationViewController
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified imageView;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified titleLabel;
+@property (nonatomic, weak) IBOutlet UILabel * _Null_unspecified bodyLabel;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified firstButton;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified secondButton;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified secondButtonContainer;
+@property (nonatomic, weak) IBOutlet UIButton * _Null_unspecified closeButton;
+@property (nonatomic, weak) IBOutlet UIImageView * _Null_unspecified backgroundImageView;
+@property (nonatomic, weak) IBOutlet UIView * _Null_unspecified viewMask;
+@property (nonatomic, weak) IBOutlet FadingView * _Null_unspecified fadingView;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint * _Null_unspecified bottomImageSpacing;
+- (void)viewDidLoad;
+- (void)buttonTapped:(id _Nonnull)sender;
+- (IBAction)tappedClose:(id _Nonnull)sender;
+@property (nonatomic, readonly) BOOL shouldAutorotate;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -531,12 +676,147 @@ SWIFT_CLASS("_TtC10TruePicSDK21TruePicViewController")
 
 
 
+SWIFT_CLASS_NAMED("UIColorToNSString")
+@interface UIColorToNSString : NSValueTransformer
++ (Class _Nonnull)transformedValueClass SWIFT_WARN_UNUSED_RESULT;
++ (BOOL)allowsReverseTransformation SWIFT_WARN_UNUSED_RESULT;
+- (id _Nullable)transformedValue:(id _Nullable)value SWIFT_WARN_UNUSED_RESULT;
+- (id _Nullable)reverseTransformedValue:(id _Nullable)value SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UIControl;
+
+SWIFT_CLASS("_TtC10TruePicSDK16UIControlBinding")
+@interface UIControlBinding : CodelessBinding
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)encodeWithCoder:(NSCoder * _Nonnull)aCoder;
+- (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) NSUInteger hash;
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+- (void)preVerifyWithSender:(UIControl * _Nonnull)sender event:(UIEvent * _Nonnull)event;
+- (void)executeWithSender:(UIControl * _Nonnull)sender event:(UIEvent * _Nonnull)event;
+@end
 
 
 
 
 
 
+
+
+SWIFT_CLASS_NAMED("UIEdgeInsetsToNSDictionary")
+@interface UIEdgeInsetsToNSDictionary : NSValueTransformer
++ (Class _Nonnull)transformedValueClass SWIFT_WARN_UNUSED_RESULT;
++ (BOOL)allowsReverseTransformation SWIFT_WARN_UNUSED_RESULT;
+- (id _Nullable)transformedValue:(id _Nullable)value SWIFT_WARN_UNUSED_RESULT;
+- (id _Nullable)reverseTransformedValue:(id _Nullable)value SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS_NAMED("UIFontToNSDictionary")
+@interface UIFontToNSDictionary : NSValueTransformer
++ (Class _Nonnull)transformedValueClass SWIFT_WARN_UNUSED_RESULT;
++ (BOOL)allowsReverseTransformation SWIFT_WARN_UNUSED_RESULT;
+- (id _Nullable)transformedValue:(id _Nullable)value SWIFT_WARN_UNUSED_RESULT;
+- (id _Nullable)reverseTransformedValue:(id _Nullable)value SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+
+SWIFT_CLASS_NAMED("UIImageToNSDictionary")
+@interface UIImageToNSDictionary : NSValueTransformer
++ (Class _Nonnull)transformedValueClass SWIFT_WARN_UNUSED_RESULT;
++ (BOOL)allowsReverseTransformation SWIFT_WARN_UNUSED_RESULT;
+- (id _Nullable)transformedValue:(id _Nullable)value SWIFT_WARN_UNUSED_RESULT;
+- (id _Nullable)reverseTransformedValue:(id _Nullable)value SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC10TruePicSDK18UITableViewBinding")
+@interface UITableViewBinding : CodelessBinding
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+- (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) NSUInteger hash;
+@end
+
+
+
+
+@interface UIView (SWIFT_EXTENSION(TruePicSDK))
+- (void)callOriginalFunctionAndSwizzledBlocksWithOriginalSelector:(SEL _Nonnull)originalSelector;
+- (void)newDidMoveToWindow;
+- (void)newDidMoveToSuperview;
+- (void)newLayoutSubviews;
+@end
+
+@class NSNumber;
+@class NSString;
+@class NSArray;
+
+@interface UIView (SWIFT_EXTENSION(TruePicSDK))
+- (NSNumber * _Nonnull)mp_fingerprintVersion SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)mp_varA SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)mp_varB SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)mp_varC SWIFT_WARN_UNUSED_RESULT;
+- (NSArray * _Nonnull)mp_varSetD SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)mp_varE SWIFT_WARN_UNUSED_RESULT;
+@end
+
+@class UITableView;
+
+@interface UIViewController (SWIFT_EXTENSION(TruePicSDK))
+- (void)newDidSelectRowAtIndexPathWithTableView:(UITableView * _Nonnull)tableView indexPath:(NSIndexPath * _Nonnull)indexPath;
+@end
+
+
+
+
+SWIFT_CLASS("_TtC10TruePicSDK7Variant")
+@interface Variant : NSObject <NSCoding>
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)encodeWithCoder:(NSCoder * _Nonnull)aCoder;
+- (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) NSUInteger hash;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC10TruePicSDK13VariantAction")
+@interface VariantAction : NSObject <NSCoding>
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)encodeWithCoder:(NSCoder * _Nonnull)aCoder;
+- (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) NSUInteger hash;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC10TruePicSDK12VariantTweak")
+@interface VariantTweak : NSObject <NSCoding>
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)encodeWithCoder:(NSCoder * _Nonnull)aCoder;
+- (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) NSUInteger hash;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+@end
+
+@class NSStream;
+
+SWIFT_CLASS("_TtC10TruePicSDK9WebSocket")
+@interface WebSocket : NSObject <NSStreamDelegate>
+- (void)stream:(NSStream * _Nonnull)aStream handleEvent:(NSStreamEvent)eventCode;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
