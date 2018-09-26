@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		NR1iReN6rePo9QV/4G4hXni+3Rs=
+		oxLvynecgeYNgRtzEKADMpHt/aE=
 		</data>
 		<key>Headers/TruePic.h</key>
 		<data>
@@ -18,11 +18,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		WYadl9eaLJBk/+x+youk83bSzGk=
+		gFHWje8Y1nG9eSUE6+H/wxgTOZo=
 		</data>
 		<key>Localizable.strings</key>
 		<data>
-		2RfpmAZnZQu8w2nL8WB0US5SOos=
+		lLOnglsgvvWMjRN+VZ1lecK7n+U=
 		</data>
 		<key>MPCloseButton.png</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>MiniNotificationViewController.nib</key>
 		<data>
-		t1u3vlA5hP6ZzXVipEYMmUwj+7s=
+		X+qXEpq+BlmzLTNNuBZqgP2hAcs=
 		</data>
 		<key>Modules/TruePicSDK.swiftmodule/arm.swiftdoc</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Modules/TruePicSDK.swiftmodule/arm.swiftmodule</key>
 		<data>
-		nPT8iQ1p345Z77nbXJgFEUFoC2Q=
+		Z2YbVpdAeOkPxXSSGFCJ+8i5Ulg=
 		</data>
 		<key>Modules/TruePicSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/TruePicSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		+VVu5MOv8aMq806ytoPu2EbpImE=
+		sIlI8rkMY3chBywjp9kUWturqaI=
 		</data>
 		<key>Modules/TruePicSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Modules/TruePicSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		hTw92Pfgytfx5OoGLqlo3rpvSHA=
+		B3ea6mPgLrdvQBEnQ2JgBg7sJuQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -86,19 +86,19 @@
 		</data>
 		<key>TakeoverNotificationViewController~ipad.nib</key>
 		<data>
-		MW0ibuwXaedPwDAWnkHliKUipAQ=
+		OuC5OAJejht5KAz95CSNq7Hmj9E=
 		</data>
 		<key>TakeoverNotificationViewController~iphonelandscape.nib</key>
 		<data>
-		874wuJiQCnNp1v4diLQ1MqBIFBo=
+		8FOjA96s5YVtYtEkIp9iFBkQNY8=
 		</data>
 		<key>TakeoverNotificationViewController~iphoneportrait.nib</key>
 		<data>
-		9JlwwuMtW7vhv71tvoHff8hzvBY=
+		ILN/8n3Vd/XPtc2wU0schCN+sKA=
 		</data>
 		<key>TruePic.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib</key>
 		<data>
-		DspVtKivZaERt9O490P3+pPrAi0=
+		liaVFlSmniE/YvUidxIBlC+K1OM=
 		</data>
 		<key>TruePic.storyboardc/Info.plist</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>TruePic.storyboardc/TruePicViewController.nib</key>
 		<data>
-		Mb7PzgBSmuhgIg57sjJWpsVvoHY=
+		tuhpjfe4cfQvoOm4SHQbAvO8HeA=
 		</data>
 		<key>placeholder-image.png</key>
 		<data>
@@ -119,11 +119,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			NR1iReN6rePo9QV/4G4hXni+3Rs=
+			oxLvynecgeYNgRtzEKADMpHt/aE=
 			</data>
 			<key>hash2</key>
 			<data>
-			MSxDNQoWGZVgIbBXQKYxGwK2mhxyj+zKfFUQa+Fw9i0=
+			5O0/4E4IGtY4p9zaUyWgtVnU8itLdrsZuk7hkdBPh6Y=
 			</data>
 		</dict>
 		<key>Headers/TruePic.h</key>
@@ -152,11 +152,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2RfpmAZnZQu8w2nL8WB0US5SOos=
+			lLOnglsgvvWMjRN+VZ1lecK7n+U=
 			</data>
 			<key>hash2</key>
 			<data>
-			tej6o1uZhZ1OM2sJG4LG8aT+SNweaG2ym4uH1ZfD9xU=
+			Siz5/Q5pSX8X3SjgfgNJXyZVgcaFDlp/jkqCojAPaCI=
 			</data>
 		</dict>
 		<key>MPCloseButton.png</key>
@@ -196,11 +196,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			t1u3vlA5hP6ZzXVipEYMmUwj+7s=
+			X+qXEpq+BlmzLTNNuBZqgP2hAcs=
 			</data>
 			<key>hash2</key>
 			<data>
-			n7XS+I4fC3Ii8jGg6JymHF/FEzTkX4sTOkHUizv3nXQ=
+			mtjSR5EmZT1D5f09vJy+eS2qAV0vpSHegPiR1oCzbpM=
 			</data>
 		</dict>
 		<key>Modules/TruePicSDK.swiftmodule/arm.swiftdoc</key>
@@ -218,11 +218,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			nPT8iQ1p345Z77nbXJgFEUFoC2Q=
+			Z2YbVpdAeOkPxXSSGFCJ+8i5Ulg=
 			</data>
 			<key>hash2</key>
 			<data>
-			qOAC+Nk2GEIlHoUHMu+kE5KGEWB+ETqRkZBr0yYR2oc=
+			s1FpgECoDjYG6Un8s0VmZfqza1YOmmN7PLXvO4lBK/M=
 			</data>
 		</dict>
 		<key>Modules/TruePicSDK.swiftmodule/arm64.swiftdoc</key>
@@ -240,11 +240,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+VVu5MOv8aMq806ytoPu2EbpImE=
+			sIlI8rkMY3chBywjp9kUWturqaI=
 			</data>
 			<key>hash2</key>
 			<data>
-			POGLV0wEUSNIQfYVJkdegdJO/Pcxky8HBiLe8HnMk5o=
+			iBt9JPJzasAKApfYIO3OqCQiw7PFfpHIcX5lY2HW+ns=
 			</data>
 		</dict>
 		<key>Modules/TruePicSDK.swiftmodule/x86_64.swiftdoc</key>
@@ -262,11 +262,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			hTw92Pfgytfx5OoGLqlo3rpvSHA=
+			B3ea6mPgLrdvQBEnQ2JgBg7sJuQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			d/NunCS5rzoFpgyDhFscq6RMHPBK17t0+W7qkt3n+e4=
+			kafCRJ3lW4JWomcpWgaQDeBOGF/pI1BKfQeMBmFJ9H4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -328,44 +328,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			MW0ibuwXaedPwDAWnkHliKUipAQ=
+			OuC5OAJejht5KAz95CSNq7Hmj9E=
 			</data>
 			<key>hash2</key>
 			<data>
-			mERQRV2d0voqdWnfcvDq+4nOuN0joXvooPB8sJcrpCU=
+			jXDXmNIlzZX5k2ghBjzu3w48Sk0NSEzudRp9LfpctCk=
 			</data>
 		</dict>
 		<key>TakeoverNotificationViewController~iphonelandscape.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			874wuJiQCnNp1v4diLQ1MqBIFBo=
+			8FOjA96s5YVtYtEkIp9iFBkQNY8=
 			</data>
 			<key>hash2</key>
 			<data>
-			hHLLggta7BEcuZ2nLIVyQKINFc3xyNwp/a0pJas1PnQ=
+			J/Yz/b6zM/W93yU3ebJQHVYBOxqDblYFUYC8KJf3ntE=
 			</data>
 		</dict>
 		<key>TakeoverNotificationViewController~iphoneportrait.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			9JlwwuMtW7vhv71tvoHff8hzvBY=
+			ILN/8n3Vd/XPtc2wU0schCN+sKA=
 			</data>
 			<key>hash2</key>
 			<data>
-			Rw+H32nOOjhHsbkKc9S0KsMc3oBo1d2nbu+cg6mRYhY=
+			1b6P/dKKrmA2LgUdaS9ifN2bvwnkahgOH1NRHLg8aWk=
 			</data>
 		</dict>
 		<key>TruePic.storyboardc/BYZ-38-t0r-view-8bC-Xf-vdC.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			DspVtKivZaERt9O490P3+pPrAi0=
+			liaVFlSmniE/YvUidxIBlC+K1OM=
 			</data>
 			<key>hash2</key>
 			<data>
-			XS27uehaUXPEl5JSC59M6lowOVZmjX1d0X5Hgm9ZEO4=
+			qY2YKfdEunpxUvBz0X8p0PSQcUu/DROCul/GslS+gjo=
 			</data>
 		</dict>
 		<key>TruePic.storyboardc/Info.plist</key>
@@ -383,11 +383,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Mb7PzgBSmuhgIg57sjJWpsVvoHY=
+			tuhpjfe4cfQvoOm4SHQbAvO8HeA=
 			</data>
 			<key>hash2</key>
 			<data>
-			1xG0x3vAGzRetufZ8xrMXqYvqoSL25ZSH/4z/d8u/6Q=
+			VVeHdKmrvAUw/+t2TBqgDWEvXWvVUC4eVgKy4NrYxfQ=
 			</data>
 		</dict>
 		<key>placeholder-image.png</key>

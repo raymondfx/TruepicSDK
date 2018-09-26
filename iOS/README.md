@@ -4,6 +4,18 @@ An iOS Framework that verifies photos and videos with Truepic.
 
 ## [API Documentation](Truepic_iOS_SDK.pdf)
 
+## Build 105
+1) Now records metrics to dev or release Mixpanel projects depending upon debug/release version of SDK.
+2) Switched to official Sentry library for logging instead of my home brewed version. Log events should now survive crashes and lost network connections, include extra info like app name, and will be much easier to search on.
+3) Capture confusion changes
+- Alert drawer now auto-opens for any warning including calibration, and only auto-closes if camera state becomes enabled.
+- Capture button now in darker disabled color.
+- Flash & front/back camera buttons now disabled when camera disabled.
+-  Fixed errors in drawer text and tested in both modes (vision and TPv4) on iPhone 5 to make sure all correct and fit.
+
+SDK API Changes
+- Now send TruepicOpenGallery notification after TruepicViewClosed notification for Next button, so Next button works like Thumbnail button.
+
 ## Build 100
 1) Implemented MixPanel, now logging action to "iOS SDK" project in our MixPanel account. This release logs taps on
 - Next button (enabled or disabled)
